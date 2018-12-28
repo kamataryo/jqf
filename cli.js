@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const functionPipeline = require('./')
 
 // stdin
@@ -9,4 +11,6 @@ let data = ''
 const functionString = process.argv[2]
 
 process.stdin.on('data', chunk => (data += chunk))
-process.stdin.on('end', () => functionPipeline(data, functionString))
+process.stdin.on('end', () =>
+  process.stdout.write(functionPipeline(data, functionString))
+)
