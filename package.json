@@ -1,6 +1,6 @@
 {
   "name": "jqf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Process stdin JSON string with JavaScript function.",
   "main": "index.js",
   "bin": "cli.js",
