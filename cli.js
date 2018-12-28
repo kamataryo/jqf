@@ -6,6 +6,7 @@ const { version } = require('./package.json')
 
 program
   .version(version)
+  .usage('[options] \'<JavaScript function...>\'')
   .option('-r, --raw-string-output', 'no quotations with string output')
   .parse(process.argv)
 
@@ -17,14 +18,12 @@ let data = ''
 // arg
 const functionString = program.args[0]
 
+// options
+const { rawStringOutput } = program
+
 process.stdin.on('data', chunk => (data += chunk))
 process.stdin.on('end', () => {
-  const result = lib(data, functionString)
-  let output
-  if (program.rawStringOutput && typeof result === 'string') {
-    output = result
-  } else {
-    output = JSON.stringify(result)
-  }
-  process.stdout.write(output)
+  const stdout = lib(data, functionString, { rawStringOutput })
+  process.stdout.write(stdout)
+  process.exit(0)
 })
