@@ -23,7 +23,14 @@ const { rawStringOutput } = program
 
 process.stdin.on('data', chunk => (data += chunk))
 process.stdin.on('end', () => {
-  const stdout = lib(data, functionString, { rawStringOutput })
+  let stdout
+  try {
+    stdout = lib(data, functionString, { rawStringOutput })
+  } catch (e) {
+    process.stdout.write(e.message)
+    process.exit(1)
+  }
+
   process.stdout.write(stdout)
   process.exit(0)
 })
