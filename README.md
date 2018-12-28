@@ -1,5 +1,9 @@
 # jqf
 
+[![Build Status](https://travis-ci.org/kamataryo/jqf.svg?branch=master)](https://travis-ci.org/kamataryo/jqf)
+
+[![npm version](https://badge.fury.io/js/jqf.svg)](https://badge.fury.io/js/jqf)
+
 Process stdin JSON string with JavaScript function.
 
 Try it with `npx`!
