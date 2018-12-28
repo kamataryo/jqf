@@ -1,0 +1,17 @@
+{
+  "name": "@kamataryo/json-pipeline",
+  "version": "0.0.1",
+  "description": "process STDOUT JSON with JavaScript",
+  "main": "index.js",
+  "bin": "cli.js",
+  "license": "MIT",
+  "repository": "git@github.com:kamataryo/json-pipeline.git",
+  "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
+  "private": false,
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^1.0.1"
+  }
+}
