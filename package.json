@@ -14,5 +14,7 @@
   "devDependencies": {
     "ava": "^1.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
 }
