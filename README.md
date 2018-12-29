@@ -30,6 +30,13 @@ $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
 apple
 ```
 
+Non-JSON output will be undefined:
+
+```shell
+$ echo '{}' | jqf '() => (x => x)'
+undefined
+```
+
 ### options
 
 ```shell

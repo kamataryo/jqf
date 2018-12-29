@@ -44,3 +44,7 @@ test('function output', t => {
   const result = lib('{}', '() => x => x', {})
   t.true(result === 'undefined')
 })
+
+test('Node.js object should not be accessible', t => {
+  t.throws(() => lib('{}', '() => require("fs")'))
+})
