@@ -1,6 +1,6 @@
 {
   "name": "jqf",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Process stdin JSON string with JavaScript function.",
   "keywords": [
     "json",
