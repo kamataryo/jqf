@@ -3,6 +3,7 @@
 const program = require('commander')
 const lib = require('./')
 const { version } = require('./package.json')
+const isatty = require('tty').isatty(0)
 
 program
   .version(version)
@@ -11,19 +12,17 @@ program
   .option('-m, --minify', 'minify output JSON')
   .parse(process.argv)
 
-// stdin
-process.stdin.resume()
-process.stdin.setEncoding('utf8')
-let data = ''
-
 // arg
 const functionString = program.args[0]
 
 // options
 const { rawStringOutput, minify } = program
 
-process.stdin.on('data', chunk => (data += chunk))
-process.stdin.on('end', () => {
+// stdin
+process.stdin.resume()
+process.stdin.setEncoding('utf8')
+let data = ''
+const onEnd = () => {
   let stdout
   try {
     stdout = lib(data, functionString, { rawStringOutput, minify })
@@ -34,4 +33,11 @@ process.stdin.on('end', () => {
 
   process.stdout.write(stdout)
   process.exit(0)
-})
+}
+
+if (isatty) {
+  onEnd()
+} else {
+  process.stdin.on('data', chunk => (data += chunk))
+  process.stdin.on('end', onEnd)
+}
