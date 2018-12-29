@@ -1,31 +1,31 @@
-const callback = Symbol('callback')
+const safeEval = require('safe-eval')
 
 const main = (input, functionString, { rawStringOutput } = {}) => {
   let json
   try {
     json = JSON.parse(input)
   } catch (e) {
-    throw new Error(`\`${input.replace('\n', '\\n')}\` is not parsable.`)
+    throw new Error(`[Error]\`${input.replace('\n', '\\n')}\` is not parsable.`)
   }
 
   let result
   try {
-    eval(`global[callback] = ${functionString}`)
-    result = global[callback](json)
+    result = safeEval(`${functionString}`)(json)
   } catch (e) {
-    throw new Error('The argument should be valid JavaScript function.')
+    throw new Error('[Error] The argument should be valid JavaScript function.')
   }
-
-  let output
   if (rawStringOutput && typeof result === 'string') {
-    output = result
+    return result
   } else if (result === void 0) {
-    output = 'undefined'
+    return 'undefined'
   } else {
-    output = JSON.stringify(result)
+    const output = JSON.stringify(result)
+    if (output === void 0) {
+      return 'undefined'
+    } else {
+      return output
+    }
   }
-
-  return output
 }
 
 module.exports = main

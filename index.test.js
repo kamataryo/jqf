@@ -20,7 +20,27 @@ test('quoted string output', t => {
   t.true(result === '"world"')
 })
 
-test('undefined output', t => {
-  const result = lib('{}', 'x => void 0', {})
+test('`undefined` output', t => {
+  const result = lib('{}', '() => void 0', {})
+  t.true(result === 'undefined')
+})
+
+test('boolean `true` output', t => {
+  const result = lib('{}', '() => true', {})
+  t.true(result === 'true')
+})
+
+test('boolean `false` output', t => {
+  const result = lib('{}', '() => false', {})
+  t.true(result === 'false')
+})
+
+test('`null` output', t => {
+  const result = lib('{}', '() => null', {})
+  t.true(result === 'null')
+})
+
+test('function output', t => {
+  const result = lib('{}', '() => x => x', {})
   t.true(result === 'undefined')
 })

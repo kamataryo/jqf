@@ -42,10 +42,6 @@ Options:
   -h, --help               output usage information
 ```
 
-## **ATTENTION**
-
-It is highly recommended not to pass unreliable user inputs to `jqf`, because it can cause malicious code injection easy. `jqf` is simply a tool for developers to process JSON instantly, so far.
-
 ## development
 
 ```shell
