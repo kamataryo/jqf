@@ -4,13 +4,23 @@ const ERROR = chalk.red('[error]')
 
 const main = (inputs, functionString, options = {}) => {
   const { rawStringOutput = false, minify = false, color = false } = options
-  let jsons
-  try {
-    jsons = inputs
-      .replace(/\n$/, '')
-      .split('\n')
-      .map(input => JSON.parse(input))
-  } catch (e) {
+
+  const jsons = []
+
+  let data
+  inputs.split('\n').reduce((prev, line) => {
+    const target = prev + line
+    let json
+    try {
+      json = JSON.parse(target)
+    } catch (e) {
+      return target
+    }
+    jsons.push(json)
+    return ''
+  }, '')
+
+  if (jsons.length === 0) {
     throw new Error(`${ERROR} The Given string is not parsable as JSON.`)
   }
 

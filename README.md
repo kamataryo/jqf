@@ -36,10 +36,21 @@ Array processing example:
 
 ```shell
 $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
-  fruits => fruits
-    .find(fruit => fruit[0] === "a")
-'
+    fruits => fruits
+      .find(fruit => fruit[0] === "a")
+  '
 apple
+```
+
+Calculate average score through JSON API:
+
+```shell
+$ curl -s 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
+    jqf 'students => students.data
+      .reduce(
+        (prev, student) => prev + student.score, 0) / students.data.length
+    '
+72.8
 ```
 
 Non JSON output:
@@ -52,7 +63,8 @@ undefined
 Merge stdin stream:
 
 ```shell
-$ cat <(echo '{"value":1}') <(echo '{"value":2}') | jqf '(...arg) => arg[0].value + arg[1].value'
+$ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
+    jqf '(...arg) => arg[0].value + arg[1].value'
 3
 ```
 

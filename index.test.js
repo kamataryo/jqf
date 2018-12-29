@@ -71,6 +71,12 @@ test('with multiple inputs', t => {
 })
 
 test('with linebreak inputs', t => {
-  const result = lib('{ "a": "hello\\nworld" }', 'x => x.a', {})
+  const result = lib(
+    `{
+    "a": "hello\\nworld" }
+    `,
+    'x => x.a',
+    {}
+  )
   t.true(result === '"hello\\nworld"')
 })
