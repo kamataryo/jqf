@@ -1,19 +1,30 @@
 const safeEval = require('safe-eval')
+const chalk = require('chalk')
+const ERROR = chalk.red('[error]')
 
-const main = (input, functionString, { rawStringOutput, minify } = {}) => {
-  let json
+const main = (inputs, functionString, options = {}) => {
+  const { rawStringOutput = false, minify = false, color = false } = options
+  let jsons
   try {
-    json = JSON.parse(input)
+    jsons = inputs
+      .replace(/\n$/, '')
+      .split('\n')
+      .map(input => JSON.parse(input))
   } catch (e) {
-    throw new Error('[Error] The Given string is not parsable as JSON.')
+    throw new Error(`${ERROR} The Given string is not parsable as JSON.`)
   }
 
   let result
   try {
-    result = safeEval(`${functionString}`)(json)
+    result = safeEval(`${functionString}`)(...jsons)
   } catch (e) {
     throw new Error(
-      '[Error] The argument should be valid JavaScript and callable function object.'
+      e.message
+        .split('\n')
+        .map(line => `${ERROR} ${line}`)
+        .join('\n') +
+        '\n' +
+        `${ERROR} The argument should be a valid JavaScript function.`
     )
   }
   if (rawStringOutput && typeof result === 'string') {
@@ -22,7 +33,7 @@ const main = (input, functionString, { rawStringOutput, minify } = {}) => {
     return 'undefined'
   } else {
     const output = minify
-      ? JSON.stringify(result)
+      ? JSON.stringify(result, null)
       : JSON.stringify(result, null, 2)
     if (output === void 0) {
       return 'undefined'

@@ -64,3 +64,13 @@ test('with minify option', t => {
   const result = lib('{ "a": 1, "b": 2 }', 'x => x', { minify: true })
   t.true(result === '{"a":1,"b":2}')
 })
+
+test('with multiple inputs', t => {
+  const result = lib('{ "a": 1 }\n{ "a": 2 }', '(x, y) => x.a + y.a', {})
+  t.true(result === '3')
+})
+
+test('with linebreak inputs', t => {
+  const result = lib('{ "a": "hello\\nworld" }', 'x => x.a', {})
+  t.true(result === '"hello\\nworld"')
+})

@@ -37,6 +37,21 @@ $ echo '{}' | jqf '() => (x => x)'
 undefined
 ```
 
+Multiple stream:
+
+```shell
+$ cat <(echo '{"value":1}') <(echo '{"value":2}') | jqf '(x, y) => x.value + y.value'
+3
+```
+
+sandbox:
+
+````shell
+$ echo '{}' | jqf '() => require("fs").readFileSync("/path/to/secret")'
+[error] require is not defined
+[error] The argument should be a valid JavaScript function.
+```
+
 ### options
 
 ```shell
@@ -47,7 +62,7 @@ Options:
   -V, --version            output the version number
   -r, --raw-string-output  no quotations with string output
   -h, --help               output usage information
-```
+````
 
 ## development
 
