@@ -23,7 +23,7 @@ npx: installed 10 in 4.419s
 "world"
 ```
 
-## Usage
+## Usage and examples
 
 Basic:
 
@@ -32,7 +32,7 @@ $ echo '{"hello": "world"}' | jqf 'x => x.hello'
 "world"
 ```
 
-Array processing example:
+Array processing example with `find` method:
 
 ```shell
 $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
@@ -53,22 +53,23 @@ $ curl -s 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/stude
 72.8
 ```
 
-Non JSON output:
+Non JSON output (example if you tried to return a function literal):
 
 ```shell
 $ echo '{}' | jqf '() => (x => x)'
 undefined
 ```
 
-Merge stdin stream:
+Merge stdin streams:
 
 ```shell
+# The merged stream with line-breaks will be placed ordered arguments.
 $ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
     jqf '(...arg) => arg[0].value + arg[1].value'
 3
 ```
 
-Security with sandbox:
+Security inside sandbox:
 
 ```shell
 $ echo '{}' | jqf '() => require("fs").readFileSync("/path/to/secret")'
@@ -76,7 +77,7 @@ $ echo '{}' | jqf '() => require("fs").readFileSync("/path/to/secret")'
 [error] The argument should be a valid executable JavaScript function.
 ```
 
-NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package for sandbox feature.
+NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package for sandbox features.
 
 ### options
 
@@ -102,7 +103,7 @@ $ npm test
 
 ## contributions
 
-Issues and Pull Requests are welcome.
+Issues and pull requests are welcome.
 
 ## Acknowledgements
 
