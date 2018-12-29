@@ -19,7 +19,8 @@ With `npx`:
 
 ```shell
 $ echo '{"hello": "world"}' | npx jqf 'x => x.hello'
-world
+npx: installed 10 in 4.419s
+"world"
 ```
 
 ## Usage
@@ -28,7 +29,7 @@ Basic:
 
 ```shell
 $ echo '{"hello": "world"}' | jqf 'x => x.hello'
-world
+"world"
 ```
 
 Array processing example:
@@ -63,7 +64,7 @@ $ echo '{}' | jqf '() => require("fs").readFileSync("/path/to/secret")'
 [error] The argument should be a valid executable JavaScript function.
 ```
 
-NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package.
+NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package for sandbox feature.
 
 ### options
 
