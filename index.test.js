@@ -46,5 +46,21 @@ test('function output', t => {
 })
 
 test('Node.js object should not be accessible', t => {
-  t.throws(() => lib('{}', '() => require("fs")'))
+  t.throws(() => lib('{}', '() => require("fs")', {}))
+})
+
+test('without minify option', t => {
+  const result = lib('{"a":1,"b":2}', 'x => x', { minify: false })
+  t.true(
+    result ===
+      `{
+  "a": 1,
+  "b": 2
+}`
+  )
+})
+
+test('with minify option', t => {
+  const result = lib('{ "a": 1, "b": 2 }', 'x => x', { minify: true })
+  t.true(result === '{"a":1,"b":2}')
 })

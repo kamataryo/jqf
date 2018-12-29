@@ -8,6 +8,7 @@ program
   .version(version)
   .usage('[options] \'<JavaScript function...>\'')
   .option('-r, --raw-string-output', 'no quotations with string output')
+  .option('-m, --minify', 'minify output JSON')
   .parse(process.argv)
 
 // stdin
@@ -19,13 +20,13 @@ let data = ''
 const functionString = program.args[0]
 
 // options
-const { rawStringOutput } = program
+const { rawStringOutput, minify } = program
 
 process.stdin.on('data', chunk => (data += chunk))
 process.stdin.on('end', () => {
   let stdout
   try {
-    stdout = lib(data, functionString, { rawStringOutput })
+    stdout = lib(data, functionString, { rawStringOutput, minify })
   } catch (e) {
     process.stdout.write(e.message)
     process.exit(1)
