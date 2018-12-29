@@ -24,7 +24,7 @@ const main = (inputs, functionString, options = {}) => {
         .map(line => `${ERROR} ${line}`)
         .join('\n') +
         '\n' +
-        `${ERROR} The argument should be a valid JavaScript function.`
+        `${ERROR} The argument should be a valid executable JavaScript function.`
     )
   }
   if (rawStringOutput && typeof result === 'string') {

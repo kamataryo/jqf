@@ -5,22 +5,33 @@
 
 Process stdin JSON string with JavaScript function.
 
-## install and usage
+## Prerequisites
+
+Node.js > 8
+
+## install
 
 ```shell
 $ npm install jqf --global
-$ echo '{"hello": "world"}' | jqf 'x => x.hello'
-world
 ```
 
-Try with `npx`:
+With `npx`:
 
 ```shell
 $ echo '{"hello": "world"}' | npx jqf 'x => x.hello'
 world
 ```
 
-array processing example:
+## Usage
+
+Basic:
+
+```shell
+$ echo '{"hello": "world"}' | jqf 'x => x.hello'
+world
+```
+
+Array processing example:
 
 ```shell
 $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
@@ -30,27 +41,29 @@ $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
 apple
 ```
 
-Non-JSON output will be undefined:
+Non JSON output:
 
 ```shell
 $ echo '{}' | jqf '() => (x => x)'
 undefined
 ```
 
-Multiple stream:
+Merge stdin stream:
 
 ```shell
-$ cat <(echo '{"value":1}') <(echo '{"value":2}') | jqf '(x, y) => x.value + y.value'
+$ cat <(echo '{"value":1}') <(echo '{"value":2}') | jqf '(...arg) => arg[0].value + arg[1].value'
 3
 ```
 
-sandbox:
+Security with sandbox:
 
-````shell
+```shell
 $ echo '{}' | jqf '() => require("fs").readFileSync("/path/to/secret")'
 [error] require is not defined
-[error] The argument should be a valid JavaScript function.
+[error] The argument should be a valid executable JavaScript function.
 ```
+
+NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package.
 
 ### options
 
@@ -61,8 +74,9 @@ Usage: jqf [options] '<JavaScript function...>'
 Options:
   -V, --version            output the version number
   -r, --raw-string-output  no quotations with string output
+  -m, --minify             minify output JSON
   -h, --help               output usage information
-````
+```
 
 ## development
 
