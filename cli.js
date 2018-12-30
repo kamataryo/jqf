@@ -2,11 +2,13 @@
 
 const program = require('commander')
 const lib = require('./')
-const { version } = require('./package.json')
+const { version, description } = require('./package.json')
 const isatty = require('tty').isatty(0)
 
 program
   .version(version)
+  .command('jqf')
+  .description(description)
   .usage('[options] \'<JavaScript function...>\'')
   .option('-r, --raw-string-output', 'no quotations with string output')
   .option('-m, --minify', 'minify output JSON')
