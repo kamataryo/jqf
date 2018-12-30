@@ -22,8 +22,6 @@ program.on('--help', () => {
 
 program.parse(process.argv)
 
-console.log(program)
-
 // hight order method
 const method = program.args[1] && program.args[0]
 
