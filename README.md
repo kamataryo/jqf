@@ -70,6 +70,7 @@ $ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
 ```
 
 sub commands:
+_NOTE_ sub commands will be ignored with multiple stream input described above.
 
 ```shell
 # equivalent with `jqf 'arr => arr.map(num => num + 1)'
