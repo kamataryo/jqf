@@ -7,15 +7,28 @@ const isatty = require('tty').isatty(0)
 
 program
   .version(version)
-  .command('jqf')
   .description(description)
-  .usage('[options] \'<JavaScript function...>\'')
+  .usage('[method] [options] "<JavaScript function>"')
   .option('-r, --raw-string-output', 'no quotations with string output')
   .option('-m, --minify', 'minify output JSON')
-  .parse(process.argv)
+
+program.on('--help', () => {
+  console.log('')
+  console.log('Examples:')
+  console.log('  $ jqf      \'obj => obj.value\'')
+  console.log('  $ jqf map  \'arr => arr.id\'')
+  console.log('  $ jqf find \'arr => arr.id === 1\'')
+})
+
+program.parse(process.argv)
+
+console.log(program)
+
+// hight order method
+const method = program.args[1] && program.args[0]
 
 // arg
-const functionString = program.args[0]
+const functionString = program.args[1] || program.args[0]
 
 // options
 const { rawStringOutput, minify } = program
@@ -27,7 +40,11 @@ let data = ''
 const onEnd = () => {
   let stdout
   try {
-    stdout = lib(data, functionString, { rawStringOutput, minify })
+    stdout = lib(data, functionString, {
+      rawStringOutput,
+      minify,
+      method
+    })
   } catch (e) {
     process.stdout.write(e.message)
     process.exit(1)

@@ -69,6 +69,14 @@ $ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
 3
 ```
 
+sub commands:
+
+```shell
+# equivalent with `jqf 'arr => arr.map(num => num + 1)'
+$ echo '[1,2]' | jqf map --minify 'num => num + 1'
+[2,3]
+```
+
 Security inside sandbox:
 
 ```shell
@@ -83,13 +91,20 @@ NOTE: see also [safe-eval](https://www.npmjs.com/package/safe-eval) package for 
 
 ```shell
 $ jqf -h
-Usage: jqf [options] '<JavaScript function...>'
+Usage: jqf [method] [options] "<JavaScript function...>"
+
+Process stdin JSON string with JavaScript function.
 
 Options:
   -V, --version            output the version number
   -r, --raw-string-output  no quotations with string output
   -m, --minify             minify output JSON
   -h, --help               output usage information
+
+Examples:
+  $ jqf      'obj => obj.value'
+  $ jqf map  'arr => arr.id'
+  $ jqf find 'arr => arr.id === 1'
 ```
 
 ## development

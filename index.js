@@ -3,7 +3,12 @@ const chalk = require('chalk')
 const ERROR = chalk.red('[error]')
 
 const main = (inputs, functionString, options = {}) => {
-  const { rawStringOutput = false, minify = false, color = false } = options
+  const {
+    rawStringOutput = false,
+    minify = false,
+    color = false,
+    method
+  } = options
 
   const jsons = []
 
@@ -20,23 +25,31 @@ const main = (inputs, functionString, options = {}) => {
     return ''
   }, '')
 
+  let result
+
   if (jsons.length === 0) {
     throw new Error(`${ERROR} The Given string is not parsable as JSON.`)
+  } else {
+    try {
+      const func = safeEval(`${functionString}`)
+      if (method && jsons.length === 1) {
+        // apply preprocessors if specified
+        result = jsons[0][method](func)
+      } else {
+        result = func(...jsons)
+      }
+    } catch (e) {
+      throw new Error(
+        e.message
+          .split('\n')
+          .map(line => `${ERROR} ${line}`)
+          .join('\n') +
+          '\n' +
+          `${ERROR} The argument should be a valid executable JavaScript function.`
+      )
+    }
   }
 
-  let result
-  try {
-    result = safeEval(`${functionString}`)(...jsons)
-  } catch (e) {
-    throw new Error(
-      e.message
-        .split('\n')
-        .map(line => `${ERROR} ${line}`)
-        .join('\n') +
-        '\n' +
-        `${ERROR} The argument should be a valid executable JavaScript function.`
-    )
-  }
   if (rawStringOutput && typeof result === 'string') {
     return result
   } else if (result === void 0) {

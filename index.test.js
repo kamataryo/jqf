@@ -80,3 +80,11 @@ test('with linebreak inputs', t => {
   )
   t.true(result === '"hello\\nworld"')
 })
+
+test('high order wrap', t => {
+  const result = lib('[{"value": 1}, {"value": 2}]', 'x => x.value', {
+    method: 'map',
+    minify: true
+  })
+  t.true(result === '[1,2]')
+})
