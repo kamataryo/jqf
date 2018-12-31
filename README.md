@@ -42,13 +42,14 @@ $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
 apple
 ```
 
-Calculate average score through JSON API:
+With JSON API:
 
 ```shell
 $ curl -s 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
     jqf 'students => students.data
       .reduce(
-        (prev, student) => prev + student.score, 0) / students.data.length
+        (prev, student) => prev + student.score, 0
+      ) / students.data.length
     '
 72.8
 ```
@@ -63,14 +64,14 @@ undefined
 Merge stdin streams:
 
 ```shell
-# The merged stream with line-breaks will be placed ordered arguments.
+# The merged streams with line-breaks will be placed ordered arguments.
 $ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
-    jqf '(...arg) => arg[0].value + arg[1].value'
+    jqf '(x, y) => x.value + y.value'
 3
 ```
 
 sub commands:
-_NOTE_ sub commands ignore multiple stream input described above.
+_NOTE_ sub commands ignore input with multiple streams described above and treat only 1st argument.
 
 ```shell
 # equivalent with `jqf 'arr => arr.map(num => num + 1)'
