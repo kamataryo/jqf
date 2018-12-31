@@ -325,6 +325,13 @@
   dependencies:
     arrify "^1.0.1"
 
+"@kamataryo/outdent@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@kamataryo/outdent/-/outdent-1.0.3.tgz#9c8df7611741ff9235da9d839d0e8b6ce8eadd96"
+  integrity sha512-mX0EDZBFSTJ4cLaJZdsXyMXYSRY448Y5VZxO/f0e/yjOwWYrot5unN92oKwEwnKag5ATwWK2PUqrsYPUdPmbqw==
+  dependencies:
+    strip-indent "^2.0.0"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

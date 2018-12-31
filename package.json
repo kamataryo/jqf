@@ -20,6 +20,7 @@
     "ava": "^1.0.1"
   },
   "dependencies": {
+    "@kamataryo/outdent": "^1.0.3",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "safe-eval": "^0.4.1"
