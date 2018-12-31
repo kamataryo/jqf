@@ -82,7 +82,7 @@ test.skip('multiple inputs with named pipes', async t => {
 })
 
 test.skip('linebreak', async t => {
-  const cmd = `echo '"\n"' | jqf -r 'x => x'`
+  const cmd = `echo '"\n"' | jqf 'x => x'`
   const { stdout } = await exec(cmd)
   t.is(stdout, '"\n"')
 })
@@ -97,4 +97,10 @@ test('map subcommand', async t => {
   const cmd = `echo '[1,2,3]' | jqf map --minify 'x => x + 1'`
   const { stdout } = await exec(cmd)
   t.is(stdout, '[2,3,4]')
+})
+
+test('reduce subcommnad', async t => {
+  const cmd = `echo '[{"val":1},{"val":2},{"val":3}]' | jqf reduce '(prev, {val}) => prev + val' '0'`
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '6')
 })

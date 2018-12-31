@@ -2,7 +2,7 @@ const safeEval = require('safe-eval')
 const chalk = require('chalk')
 const ERROR = chalk.red('[error]')
 
-const main = (inputs, functionString, options = {}) => {
+const main = (inputs, functionString, secondArg, options = {}) => {
   const {
     rawStringOutput = false,
     minify = false,
@@ -25,6 +25,15 @@ const main = (inputs, functionString, options = {}) => {
     return ''
   }, '')
 
+  let parsedSecondArg = void 0
+  if (secondArg) {
+    try {
+      parsedSecondArg = JSON.parse(secondArg)
+    } catch (e) {
+      throw new Error(`${ERROR} \`reduce\` 2nd argument should be valid JSON.`)
+    }
+  }
+
   let result
 
   if (jsons.length === 0) {
@@ -34,7 +43,7 @@ const main = (inputs, functionString, options = {}) => {
       const func = safeEval(`${functionString}`)
       if (method && jsons.length === 1) {
         // apply preprocessors if specified
-        result = jsons[0][method](func)
+        result = jsons[0][method](func, parsedSecondArg)
       } else {
         result = func(...jsons)
       }

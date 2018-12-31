@@ -70,12 +70,16 @@ $ cat <(echo '{"value":1}') <(echo '{"value":2}') | \
 ```
 
 sub commands:
-_NOTE_ sub commands will be ignored with multiple stream input described above.
+_NOTE_ sub commands ignore multiple stream input described above.
 
 ```shell
 # equivalent with `jqf 'arr => arr.map(num => num + 1)'
 $ echo '[1,2]' | jqf map --minify 'num => num + 1'
 [2,3]
+```
+
+```shell
+$ echo '[1,2,3]' | jqf reduce '(prev, val) => prev + val' '0'
 ```
 
 Security inside sandbox:

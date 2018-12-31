@@ -15,9 +15,10 @@ program
 program.on('--help', () => {
   console.log('')
   console.log('Examples:')
-  console.log('  $ jqf      \'obj => obj.value\'')
-  console.log('  $ jqf map  \'arr => arr.id\'')
-  console.log('  $ jqf find \'arr => arr.id === 1\'')
+  console.log('  $ jqf        \'obj => obj.value\'')
+  console.log('  $ jqf map    \'arr => arr.id\'')
+  console.log('  $ jqf find   \'arr => arr.id === 1\'')
+  console.log('  $ jqf reduce \'(prev, item) => /* reduce */\' \'"value"\'')
 })
 
 program.parse(process.argv)
@@ -27,6 +28,7 @@ const method = program.args[1] && program.args[0]
 
 // arg
 const functionString = program.args[1] || program.args[0]
+const secondArg = method === 'reduce' ? program.args[2] : void 0
 
 // options
 const { rawStringOutput, minify } = program
@@ -38,7 +40,7 @@ let data = ''
 const onEnd = () => {
   let stdout
   try {
-    stdout = lib(data, functionString, {
+    stdout = lib(data, functionString, secondArg, {
       rawStringOutput,
       minify,
       method
