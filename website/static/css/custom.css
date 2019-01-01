@@ -18,3 +18,17 @@
 .badges a {
   margin-right: 0.25em;
 }
+
+.badge-section {
+  margin-bottom: 1em;
+}
+
+.try-out-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.try-out-description {
+  text-align: center;
+}

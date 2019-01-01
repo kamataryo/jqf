@@ -3,6 +3,10 @@ id: doc1
 title: install
 ---
 
+## Prerequisites
+
+Node > 8 required.
+
 ## Install to global
 
 You can install `jqf` command with npm or yarn.

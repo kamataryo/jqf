@@ -5,8 +5,7 @@
 
 Process stdin JSON string with JavaScript function.
 
-Show documentation:
-[https://kamataryo.github.io/jqf/](https://kamataryo.github.io/jqf/)
+Show documentation: [https://kamataryo.github.io/jqf/](https://kamataryo.github.io/jqf/)
 
 ## Prerequisites
 
@@ -123,6 +122,13 @@ $ git clone git@github.com:kamataryo/jqf.git
 $ cd jqf
 $ yarn
 $ npm test
+```
+
+## docs development
+
+```shell
+$ cd website
+$ npm start
 ```
 
 ## contributions

@@ -1,7 +1,7 @@
 {
   "name": "jqf",
   "version": "1.3.3",
-  "description": "Jqf is command-line JSON processor with JS function syntax.",
+  "description": "Jqf is CLI JSON processor with JavaScript function syntax",
   "keywords": [
     "json",
     "processor",
@@ -11,7 +11,7 @@
   "main": "index.js",
   "bin": "cli.js",
   "license": "MIT",
-  "repository": "git@github.com:kamataryo/json-pipeline.git",
+  "repository": "git@github.com:kamataryo/jqf.git",
   "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "private": false,
   "scripts": {

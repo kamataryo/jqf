@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Jqf is command-line JSON processor with JS function syntax.",
+    "tagline": "Jqf is CLI JSON processor with JavaScript function syntax",
     "docs": {
       "doc1": {
         "title": "install"

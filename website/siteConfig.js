@@ -31,7 +31,8 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default'
+    theme: 'default',
+    defaultLang: 'shell-session'
   },
 
   // On page navigation for the current documentation page.
