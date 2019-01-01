@@ -3,7 +3,7 @@ const projectMeta = require('../package.json')
 const siteConfig = {
   title: `${projectMeta.name} v${projectMeta.version}`, // Title for your website.
   tagline: projectMeta.description,
-  url: 'https://kamataryo.github.io/jqf', // Your website URL
+  url: 'https://kamataryo.github.io', // Your website URL
   baseUrl: '/jqf/', // Base URL for your project */
   // Used for publishing and more
   projectName: 'jqf',
