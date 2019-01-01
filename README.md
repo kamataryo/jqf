@@ -5,7 +5,7 @@
 
 Process stdin JSON string with JavaScript function.
 
-Show documentation: [https://kamataryo.github.io/jqf/](https://kamataryo.github.io/jqf/)
+Show documentation: [https://jqf.kamataryo.com](https://jqf.kamataryo.com)
 
 ## Prerequisites
 
