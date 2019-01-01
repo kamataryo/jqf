@@ -5,8 +5,7 @@ node_js:
 
 env:
   global:
-    - GIT_USER=kamataryo
-    - USE_SSH=true
+    - GH_REF=git@github.com:kamataryo/jqf.git
 
 cache:
   yarn: true
@@ -17,11 +16,20 @@ script:
   - npm test
 
 after_success:
+  - test "$TRAVIS_BRANCH" != 'master' && exit 1
+  - test "$TRAVIS_NODE_VERSION" == '10' && exit 1
   - openssl aes-256-cbc -K $encrypted_04592acae1fe_key -iv $encrypted_04592acae1fe_iv -in .travis_rsa.enc -out ./.travis_rsa -d
   - mv ./.travis_rsa $HOME/.ssh/id_rsa && chmod 600 $HOME/.ssh/id_rsa
   - git config --global user.name "travis"
   - git config --global user.email "tarvis@kamataryo.com"
-  - test "$TRAVIS_BRANCH" == 'master' && test "$TRAVIS_NODE_VERSION" == '10' && cd website && yarn install && yarn run publish-gh-pages
+  - cd website
+  - yarn install
+  - npm run build
+  - cd build
+  - git init
+  - git checkout gh-pages
+  - git remote add origin $GH_REF
+  - git push -f origin master
 
 deploy:
   provider: script
