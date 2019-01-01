@@ -1,6 +1,6 @@
 {
   "name": "jqf",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Jqf is command-line JSON processor with JS function syntax.",
   "keywords": [
     "json",
