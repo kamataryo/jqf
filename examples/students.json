@@ -1,9 +1,7 @@
-{
-  "data": [
-    { "id": 1, "name": "Adams", "score": 70 },
-    { "id": 2, "name": "Baker", "score": 58 },
-    { "id": 3, "name": "Clark", "score": 82 },
-    { "id": 4, "name": "Davis", "score": 93 },
-    { "id": 5, "name": "Evans", "score": 61 }
-  ]
-}
+[
+  { "id": 1, "name": "Adams", "score": 70 },
+  { "id": 2, "name": "Baker", "score": 58 },
+  { "id": 3, "name": "Clark", "score": 82 },
+  { "id": 4, "name": "Davis", "score": 93 },
+  { "id": 5, "name": "Evans", "score": 61 }
+]

@@ -9,8 +9,8 @@ const siteConfig = {
   projectName: 'jqf',
   organizationName: 'kamataryo',
   headerLinks: [
-    { doc: 'doc1', label: 'Install' },
-    { doc: 'doc2', label: 'API' },
+    { doc: 'install', label: 'Install' },
+    { doc: 'api', label: 'API' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' }
   ],

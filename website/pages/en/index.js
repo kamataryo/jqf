@@ -75,8 +75,8 @@ class HomeSplash extends React.Component {
           <Badges />
           <PromoSection>
             <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Install</Button>
-            <Button href={docUrl('doc2.html')}>API</Button>
+            <Button href={docUrl('install.html')}>Install</Button>
+            <Button href={docUrl('api.html')}>API</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -133,8 +133,8 @@ $ echo '{"hello": "world"}' | jqf 'obj => obj.hello'
 `}
         </MarkdownBlock>
         <p className="try-out-description">
-          For more detail, show <a href={docUrl('doc1.html')}>Install</a> and{' '}
-          <a href={docUrl('doc2.html')}>API</a> section.
+          For more detail, show <a href={docUrl('install.html')}>Install</a> and{' '}
+          <a href={docUrl('api.html')}>API</a> section.
         </p>
       </div>
     )

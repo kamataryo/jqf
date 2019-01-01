@@ -5,11 +5,14 @@
     "previous": "Previous",
     "tagline": "Jqf is CLI JSON processor with JavaScript function syntax",
     "docs": {
-      "doc1": {
+      "api": {
+        "title": "API"
+      },
+      "install": {
         "title": "install"
       },
-      "doc2": {
-        "title": "API"
+      "practical-use": {
+        "title": "Practical Use"
       }
     },
     "links": {

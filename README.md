@@ -44,18 +44,6 @@ $ echo '["apple", "orange", "banana"]' | jqf --raw-string-output '
 apple
 ```
 
-With JSON API:
-
-```shell
-$ curl -s 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
-    jqf 'students => students.data
-      .reduce(
-        (prev, student) => prev + student.score, 0
-      ) / students.data.length
-    '
-72.8
-```
-
 Non JSON output (example if you tried to return a function literal):
 
 ```shell
