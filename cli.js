@@ -28,7 +28,8 @@ const method = program.args[1] && program.args[0]
 
 // arg
 const functionString = program.args[1] || program.args[0]
-const secondArg = method === 'reduce' ? program.args[2] : void 0
+const secondArg =
+  method === 'reduce' || method === 'reduceRight' ? program.args[2] : void 0
 
 // options
 const { rawStringOutput, minify } = program

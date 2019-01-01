@@ -105,6 +105,12 @@ test('reduce subcommnad', async t => {
   t.is(stdout, '6')
 })
 
+test('reduceRight subcommnad', async t => {
+  const cmd = `echo '["a","b","c"]' | jqf reduceRight '(prev, str) => prev + str' '"word: "'`
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '"word: cba"')
+})
+
 test('reduce subcommnad fails with invalid JSON', async t => {
   const cmd = `echo '[{"val":1},{"val":2},{"val":3}]' | jqf reduce '(prev, {val}) => prev + val' '{'`
   const error = await t.throwsAsync(async () => await exec(cmd))
