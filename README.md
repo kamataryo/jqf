@@ -5,6 +5,9 @@
 
 Process stdin JSON string with JavaScript function.
 
+Show documentation:
+[https://kamataryo.github.io/jqf/](https://kamataryo.github.io/jqf/)
+
 ## Prerequisites
 
 Node.js > 8
