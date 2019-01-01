@@ -16,7 +16,7 @@ after_success:
   - mv ./.travis_rsa $HOME/.ssh/id_rsa && chmod 600 $HOME/.ssh/id_rsa
   - git config --global user.name "travis"
   - git config --global user.email "tarvis@kamataryo.com"
-  - test "$TRAVIS_BRANCH" = 'master' && cd website && yarn install && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
+  - test "$TRAVIS_BRANCH" == 'master' && test "$TRAVIS_NODE_VERSION" == '10' && cd website && yarn install && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
 
 deploy:
   provider: script
