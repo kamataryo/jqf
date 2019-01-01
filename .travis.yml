@@ -5,6 +5,7 @@ node_js:
 
 env:
   - GIT_USER=kamataryo
+  - USE_SSH=true
 
 cache:
   yarn: true
