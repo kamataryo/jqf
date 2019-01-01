@@ -29,7 +29,7 @@ after_success:
   - git init
   - git checkout gh-pages
   - git remote add origin $GH_REF
-  - git push -f origin master
+  - git push -f origin gh-pages
 
 deploy:
   provider: script
