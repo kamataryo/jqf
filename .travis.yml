@@ -4,8 +4,9 @@ node_js:
   - '10'
 
 env:
-  - GIT_USER=kamataryo
-  - USE_SSH=true
+  global:
+    - GIT_USER=kamataryo
+    - USE_SSH=true
 
 cache:
   yarn: true
