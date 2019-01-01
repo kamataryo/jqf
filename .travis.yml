@@ -5,7 +5,7 @@ node_js:
 
 env:
   global:
-    - GH_REF=git@github.com:kamataryo/jqf.git
+    - GH_REF="git@github.com:kamataryo/jqf.git"
 
 cache:
   yarn: true
@@ -27,11 +27,11 @@ after_success:
   - npm run build
   - cd build
   - git init
-  - git checkout -b gh-pages
   - git add .
   - git commit -m"[skip ci] Deploy from travis"
+  - git checkout -b gh-pages
   - git remote add origin $GH_REF
-  - yes '' | git push -f origin gh-pages
+  - git push -f origin gh-pages
 
 deploy:
   provider: script
