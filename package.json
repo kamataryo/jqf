@@ -15,7 +15,9 @@
   "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "private": false,
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "deploy_keygen": "ssh-keygen -t rsa -b 4096 -C \"$(git config user.email)\" -f ./.travis_rsa -N ''",
+    "encrypt_deploy_key": "travis encrypt-file ./.travis_rsa --add"
   },
   "devDependencies": {
     "ava": "^1.0.1"
