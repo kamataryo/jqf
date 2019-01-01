@@ -40,9 +40,9 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/jqf.png',
-  twitterImage: 'img/jqf.png'
-
+  ogImage: 'img/ogimage.png',
+  twitterImage: 'img/ogimage.png',
+  facebookAppId: '343450729823411'
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 
