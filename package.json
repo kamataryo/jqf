@@ -1,11 +1,12 @@
 {
   "name": "jqf",
   "version": "1.2.1",
-  "description": "Process stdin JSON string with JavaScript function.",
+  "description": "Jqf is command-line JSON processor with JS function syntax.",
   "keywords": [
     "json",
     "processor",
-    "javascript"
+    "javascript",
+    "CLI"
   ],
   "main": "index.js",
   "bin": "cli.js",
