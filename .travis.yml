@@ -31,7 +31,7 @@ after_success:
   - git add .
   - git commit -m"[skip ci] Deploy from travis"
   - git remote add origin $GH_REF
-  - git push -f origin gh-pages
+  - yes '' | git push -f origin gh-pages
 
 deploy:
   provider: script
