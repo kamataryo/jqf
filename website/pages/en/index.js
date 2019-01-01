@@ -143,21 +143,21 @@ $ echo '{"hello": "world"}' | jqf 'obj => obj.hello'
       <Block layout="fourColumn">
         {[
           {
-            content: 'One of the easiest way to process JSON on CLI.',
+            content: 'An easiest way to process JSON with CLI.',
             image: `${baseUrl}img/json.svg`,
             imageAlign: 'top',
-            title: 'JSON CLI processor'
+            title: 'JSON CLI Processor'
           },
           {
             content:
-              'Jqf Processes JSON input with JavaScript function synax, being most synergestic with JSON.',
+              'Jqf Processes JSON inputs with JavaScript function, with synergistic efficiency.',
             image: `${baseUrl}img/js.svg`,
             imageAlign: 'top',
             title: 'JS Syntax'
           },
           {
             content:
-              'Jqf works with standard streams input and ouput seamlessly.',
+              'Jqf seamlessly works with standard stream inputs and ouputs.',
             image: `${baseUrl}img/shell.svg`,
             imageAlign: 'top',
             title: 'STDIN and STDOUT'

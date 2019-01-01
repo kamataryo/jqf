@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/kamataryo/jqf.svg?branch=master)](https://travis-ci.org/kamataryo/jqf)
 [![npm version](https://badge.fury.io/js/jqf.svg)](https://badge.fury.io/js/jqf)
 
-Process stdin JSON string with JavaScript function.
+Jqf is a CLI JSON processor with JavaScript function syntax.
 
 Show documentation: [https://jqf.kamataryo.com](https://jqf.kamataryo.com)
 
