@@ -10,6 +10,7 @@
 const React = require('react')
 
 const CompLibrary = require('../../core/CompLibrary.js')
+const translate = require('../../server/translate.js').translate
 
 const MarkdownBlock = CompLibrary.MarkdownBlock /* Used to read markdown */
 const Container = CompLibrary.Container
@@ -74,9 +75,16 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <Badges />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('install.html')}>Install</Button>
-            <Button href={docUrl('api.html')}>API</Button>
+            {/* TODO: locale switch */}
+            <Button href={docUrl('install.html') + '#quick-start-with-npx'}>
+              <translate>Quick Start</translate>
+            </Button>
+            <Button href={docUrl('install.html')}>
+              <translate desc={'button'}>Install Guide</translate>
+            </Button>
+            <Button href={docUrl('api.html')}>
+              <translate desc="button">API Reference</translate>
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -106,72 +114,48 @@ class Index extends React.Component {
       </Container>
     )
 
-    const TryOut = () => (
-      <div id="try">
-        <h2 className="try-out-title">Try it out</h2>
-        <p className="try-out-description">
-          You can try jqf with <code>npx</code> command instantly.
-        </p>
-        <MarkdownBlock background="light">
-          {`
-\`\`\`
-$ echo '{"hello": "world"}' | npx jqf 'obj => obj.hello'
-"world"
-\`\`\`
-`}
-        </MarkdownBlock>
-        <p className="try-out-description">
-          Or, install jqf with <code>npm</code>.
-        </p>
-        <MarkdownBlock background="light">
-          {`
-\`\`\`
-$ npm install jqf --global
-$ echo '{"hello": "world"}' | jqf 'obj => obj.hello'
-"world"
-\`\`\`
-`}
-        </MarkdownBlock>
-        <p className="try-out-description">
-          For more detail, show <a href={docUrl('install.html')}>Install</a> and{' '}
-          <a href={docUrl('api.html')}>API</a> section.
-        </p>
-      </div>
-    )
-
     const Features = () => (
-      <Block layout="fourColumn">
+      <Block layout="threeColumn">
         {[
           {
-            content: 'An easiest way to process JSON with CLI.',
+            content: (
+              <translate>An easiest way to process JSON with CLI.</translate>
+            ),
             image: `${baseUrl}img/json.svg`,
             imageAlign: 'top',
-            title: 'JSON CLI Processor'
+            title: <translate>JSON CLI Processor</translate>
           },
           {
-            content:
-              'Jqf Processes JSON inputs with JavaScript function, with synergistic efficiency.',
+            content: (
+              <translate>
+                Jqf Processes JSON inputs with JavaScript function, with
+                synergistic efficiency.
+              </translate>
+            ),
             image: `${baseUrl}img/js.svg`,
             imageAlign: 'top',
-            title: 'JS Syntax'
+            title: <translate>JS Syntax</translate>
           },
           {
-            content:
-              'Jqf seamlessly works with standard stream inputs and ouputs.',
+            content: (
+              <translate>
+                Jqf seamlessly works with standard stream inputs and ouputs.
+              </translate>
+            ),
             image: `${baseUrl}img/shell.svg`,
             imageAlign: 'top',
-            title: 'STDIN and STDOUT'
+            title: <translate>STDIN and STDOUT</translate>
           }
         ]}
       </Block>
     )
+    const { primaryColor, secondaryColor } = siteConfig.colors
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <TryOut />
         </div>
       </div>
     )

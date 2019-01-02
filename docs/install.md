@@ -1,6 +1,6 @@
 ---
 id: install
-title: install
+title: Install Guide
 ---
 
 ## Prerequisites
@@ -27,4 +27,13 @@ $ yarn global add jqf
 
 ```shell
 $ npx jqf -h
+```
+
+## Quick Start with `npx`
+
+You can try jqf instantly with `npx`.
+
+```shell
+$ echo '{"hello": "world"}' | npx jqf 'obj => obj.hello'
+"world"
 ```

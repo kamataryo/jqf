@@ -61,7 +61,3 @@ typings/
 
 # next.js build output
 .next
-
-# document deploy key
-.travis_rsa
-.travis_rsa.pub

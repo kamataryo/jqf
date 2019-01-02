@@ -3,13 +3,13 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Jqf is CLI JSON processor with JavaScript function syntax",
+    "tagline": "Jqf is a CLI JSON processor with JavaScript function syntax",
     "docs": {
       "api": {
-        "title": "API"
+        "title": "API References"
       },
       "install": {
-        "title": "install"
+        "title": "Install Guide"
       },
       "practical-use": {
         "title": "Practical Use"
@@ -25,6 +25,20 @@
     }
   },
   "pages-strings": {
+    "Learn more about jqf using the [oficial documentation](/docs/en/install).|no description given": "Learn more about jqf using the [oficial documentation](/docs/en/install).",
+    "Documents|no description given": "Documents",
+    "This project is maintained at [GitHub](https://github.com/kamataryo/jqf). If you have any questions, let us know via [issues](https://github.com/kamataryo/jqf/issues). [Pull requests](https://github.com/kamataryo/jqf/pulls) are also welcome.|no description given": "This project is maintained at [GitHub](https://github.com/kamataryo/jqf). If you have any questions, let us know via [issues](https://github.com/kamataryo/jqf/issues). [Pull requests](https://github.com/kamataryo/jqf/pulls) are also welcome.",
+    "GitHub|no description given": "GitHub",
+    "Need help?|undefined": "Need help?",
+    "Quick Start|no description given": "Quick Start",
+    "Install Guide|undefined": "Install Guide",
+    "API Reference|button": "API Reference",
+    "An easiest way to process JSON with CLI.|no description given": "An easiest way to process JSON with CLI.",
+    "JSON CLI Processor|no description given": "JSON CLI Processor",
+    "Jqf Processes JSON inputs with JavaScript function, with synergistic efficiency.|no description given": "Jqf Processes JSON inputs with JavaScript function, with synergistic efficiency.",
+    "JS Syntax|no description given": "JS Syntax",
+    "Jqf seamlessly works with standard stream inputs and ouputs.|no description given": "Jqf seamlessly works with standard stream inputs and ouputs.",
+    "STDIN and STDOUT|no description given": "STDIN and STDOUT",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"

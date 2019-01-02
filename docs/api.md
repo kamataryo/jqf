@@ -1,6 +1,6 @@
 ---
 id: api
-title: API
+title: API References
 ---
 
 ## general
@@ -35,7 +35,7 @@ $ command | jqf [options] <JavaScript function>
 ```
 
 - `command` should be executable and its output should be valid JSON string
-- `<JavaScript function>` should be valid JavaScript function, which takes an object parsed from the given JSON string via stdin, processes and returns its result
+- `<JavaScript function>` should be valid JavaScript function, which takes an object parsed from the given JSON string via stdin, processes and returns its result to stdout
 - Result will be a stringified JSON, i.e. `{"key": "value"}`, `[1,2,3]`, `true`, `0` or `"string"`
 - You can pass some `[options]`:
 
@@ -71,7 +71,7 @@ $ echo '[1,2,3]' | jqf 'nums => nums.map(n => n * 2)'
 ]
 ```
 
-##### minify output array
+##### minify option
 
 ```shell
 $ echo '[1,2,3]' | jqf --minify 'nums => nums.map(n => n * 2)'
@@ -80,7 +80,7 @@ $ echo '[1,2,3]' | jqf --minify 'nums => nums.map(n => n * 2)'
 
 ### Array shorthands
 
-We provide shorthand notations for `Array.prototype` methods.
+We provide shorthand notations for some of `Array.prototype` methods with subcommand.
 
 ```shell
 $ command | jqf [method] [options] <JavaScript function>

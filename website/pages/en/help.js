@@ -6,10 +6,34 @@
  */
 
 const React = require('react')
+const translate = require('../../server/translate.js').translate
 
 const CompLibrary = require('../../core/CompLibrary.js')
-
 const Container = CompLibrary.Container
+const GridBlock = CompLibrary.GridBlock
+
+const supportLinks = [
+  {
+    content: (
+      <translate>
+        Learn more about jqf using the [oficial
+        documentation](/docs/en/install).
+      </translate>
+    ),
+    title: <translate>Documents</translate>
+  },
+  {
+    content: (
+      <translate>
+        This project is maintained at
+        [GitHub](https://github.com/kamataryo/jqf). If you have any questions,
+        let us know via [issues](https://github.com/kamataryo/jqf/issues). [Pull
+        requests](https://github.com/kamataryo/jqf/pulls) are also welcome.
+      </translate>
+    ),
+    title: <translate>GitHub</translate>
+  }
+]
 
 function Help(props) {
   const { config: siteConfig, language = '' } = props
@@ -23,20 +47,11 @@ function Help(props) {
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
           <header className="postHeader">
-            <h1>Need help?</h1>
+            <h1>
+              <translate desc={'help title'}>Need help?</translate>
+            </h1>
           </header>
-          <p>
-            {'This project is maintained at '}
-            <a href={'https://github.com/kamataryo/jqf'}>{'GitHub'}</a>
-            {'. If you have any questions, let us know via '}
-            <a href={'https://github.com/kamataryo/jqf/issues'}>{'issues'}</a>
-            {'.'}
-            <br />
-            <a href={'https://github.com/kamataryo/jqf/pulls'}>
-              {'Pull requests'}
-            </a>
-            {' are also welcome.'}
-          </p>
+          <GridBlock contents={supportLinks} layout="twoColumn" />
         </div>
       </Container>
     </div>
