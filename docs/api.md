@@ -36,8 +36,14 @@ $ command | jqf [options] <JavaScript function>
 
 - `command` should be executable and its output should be valid JSON string
 - `<JavaScript function>` should be valid JavaScript function, which takes an object parsed from the given JSON string via stdin, processes and returns its result to stdout
-- Result will be a stringified JSON, i.e. `{"key": "value"}`, `[1,2,3]`, `true`, `0` or `"string"`
-- You can pass some `[options]`:
+- Result will be a stringified JSON described below
+  - `{"key": "value"}`
+  - `[1,2,3]`
+  - `true`
+  - `0`
+  - `"string"`
+  - etc.
+- You can pass some `[options]` described below
 
   | options             | abbr. | descriptions                            |
   | :------------------ | :---- | :-------------------------------------- |
@@ -146,7 +152,7 @@ $ echo '["a", "b", "c"]' | jqf reduce '(prev, str) => prev + str' '"word: "'
 ##### `Array.prototype.reduceRight`
 
 ```shell
-# concatenate strings
+# concatenate strings in reverse
 $ echo '["a", "b", "c"]' | jqf reduceRight '(prev, str) => prev + str' '"word: "'
 "word: cba"
 ```
