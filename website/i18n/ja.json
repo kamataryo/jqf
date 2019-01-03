@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Jqf は JavaScript 関数を使った JSON 処理のための CLI ツールです",
+    "tagline": "JavaScriptと標準入出力でJSONを処理するツール",
     "docs": {
       "api": {
         "title": "API リファレンス"
