@@ -75,7 +75,6 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <Badges />
           <PromoSection>
-            {/* TODO: locale switch */}
             <Button href={docUrl('install.html') + '#quick-start-with-npx'}>
               <translate>Quick Start</translate>
             </Button>
