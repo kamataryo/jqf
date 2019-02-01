@@ -20,7 +20,7 @@ const supportLinks = [
         documentation](/docs/en/install).
       </translate>
     ),
-    title: <translate>Documents</translate>
+    title: <translate>Documents</translate>,
   },
   {
     content: (
@@ -31,8 +31,8 @@ const supportLinks = [
         requests](https://github.com/kamataryo/jqf/pulls) are also welcome.
       </translate>
     ),
-    title: <translate>GitHub</translate>
-  }
+    title: <translate>GitHub</translate>,
+  },
 ]
 
 function Help(props) {

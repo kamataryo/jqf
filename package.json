@@ -8,20 +8,37 @@
     "javascript",
     "CLI"
   ],
-  "main": "index.js",
-  "bin": "cli.js",
+  "main": "dist/index.js",
+  "bin": "dist/cli.js",
   "license": "MIT",
   "repository": "git@github.com:kamataryo/jqf.git",
   "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "private": false,
   "scripts": {
-    "test": "ava"
+    "build": "rimraf ./dist && tsc && chmod +x ./dist/cli.js",
+    "lint": "eslint --cache --ext=ts ./src",
+    "test": "npm run build && ava"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   },
   "devDependencies": {
-    "ava": "^1.0.1"
+    "@types/node": "^10.12.21",
+    "@typescript-eslint/parser": "^1.1.1",
+    "ava": "^1.0.1",
+    "eslint": "^5.12.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.2",
+    "typescript": "3.2.1"
   },
   "dependencies": {
-    "@kamataryo/outdent": "^1.0.3",
+    "@kamataryo/outdent": "^1.0.4",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "safe-eval": "^0.4.1"

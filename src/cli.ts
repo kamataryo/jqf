@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 
-const program = require('commander')
-const lib = require('./')
-const { version, description } = require('./package.json')
-const isatty = require('tty').isatty(0)
+import * as program from 'commander'
+import lib from './'
+import * as fs from 'fs'
+import { isatty } from 'tty'
+import * as outdent from '@kamataryo/outdent'
+
+const { version, description } = JSON.parse(
+  fs.readFileSync(__dirname + '/../package.json').toString('utf-8'),
+)
 
 program
   .version(version)
@@ -13,12 +18,15 @@ program
   .option('-m, --minify', 'minify output JSON')
 
 program.on('--help', () => {
-  console.log('')
-  console.log('Examples:')
-  console.log('  $ jqf        \'obj => obj.value\'')
-  console.log('  $ jqf map    \'arr => arr.id\'')
-  console.log('  $ jqf find   \'arr => arr.id === 1\'')
-  console.log('  $ jqf reduce \'(prev, item) => /* reduce */\' \'"value"\'')
+  process.stdout.write(
+    `
+      Examples:
+        $ jqf        'obj => obj.value'
+        $ jqf map    'arr => arr.id'
+        $ jqf find   'arr => arr.id === 1'
+        $ jqf reduce '(prev, item) => /* reduce */' '"value"'
+  `[outdent as string],
+  )
 })
 
 program.parse(process.argv)
@@ -39,12 +47,12 @@ process.stdin.resume()
 process.stdin.setEncoding('utf8')
 let data = ''
 const onEnd = () => {
-  let stdout
+  let stdout = ''
   try {
     stdout = lib(data, functionString, secondArg, {
       rawStringOutput,
       minify,
-      method
+      method,
     })
   } catch (e) {
     process.stdout.write(e.message)
@@ -55,7 +63,7 @@ const onEnd = () => {
   process.exit(0)
 }
 
-if (isatty) {
+if (isatty(0)) {
   onEnd()
 } else {
   process.stdin.on('data', chunk => (data += chunk))

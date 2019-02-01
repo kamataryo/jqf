@@ -1,21 +1,21 @@
-const safeEval = require('safe-eval')
-const chalk = require('chalk')
+import { JqfOptions } from '../'
+import * as safeEval from 'safe-eval'
+import chalk from 'chalk'
 const ERROR = chalk.red('[error]')
 
-const main = (inputs, functionString, secondArg, options = {}) => {
-  const {
-    rawStringOutput = false,
-    minify = false,
-    color = false,
-    method
-  } = options
+export default (
+  inputs: string,
+  functionString: string,
+  secondArg: string,
+  options: JqfOptions = {},
+): string => {
+  const { rawStringOutput = false, minify = false, method } = options
 
   const jsons = []
 
-  let data
   inputs.split('\n').reduce((prev, line) => {
     const target = prev + line
-    let json
+    let json: object
     try {
       json = JSON.parse(target)
     } catch (e) {
@@ -34,13 +34,14 @@ const main = (inputs, functionString, secondArg, options = {}) => {
     }
   }
 
-  let result
+  let result: any
 
   if (jsons.length === 0) {
     throw new Error(`${ERROR} The Given string is not parsable as JSON.`)
   } else {
     try {
-      const func = safeEval(`${functionString}`)
+      // @ts-ignore
+      const func: Function = safeEval(`${functionString}`)
       if (method && jsons.length === 1) {
         // apply preprocessors if specified
         result = jsons[0][method](func, parsedSecondArg)
@@ -51,10 +52,10 @@ const main = (inputs, functionString, secondArg, options = {}) => {
       throw new Error(
         e.message
           .split('\n')
-          .map(line => `${ERROR} ${line}`)
+          .map((line: string) => `${ERROR} ${line}`)
           .join('\n') +
           '\n' +
-          `${ERROR} The argument should be a valid executable JavaScript function.`
+          `${ERROR} The argument should be a valid executable JavaScript function.`,
       )
     }
   }
@@ -74,5 +75,3 @@ const main = (inputs, functionString, secondArg, options = {}) => {
     }
   }
 }
-
-module.exports = main

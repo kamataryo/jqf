@@ -11,7 +11,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'install', label: 'Docs' },
     { page: 'help', label: 'Help' },
-    { blog: true, label: 'Blog' }
+    { blog: true, label: 'Blog' },
   ],
 
   /* path to images for header/footer */
@@ -22,7 +22,7 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: '#2E5585',
-    secondaryColor: '#203B5C'
+    secondaryColor: '#203B5C',
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -31,7 +31,7 @@ const siteConfig = {
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'default',
-    defaultLang: 'shell-session'
+    defaultLang: 'shell-session',
   },
 
   // On page navigation for the current documentation page.
@@ -42,7 +42,7 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/ogimage.png',
   twitterImage: 'img/ogimage.png',
-  facebookAppId: '343450729823411'
+  facebookAppId: '343450729823411',
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 

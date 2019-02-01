@@ -122,7 +122,7 @@ class Index extends React.Component {
             ),
             image: `${baseUrl}img/json.svg`,
             imageAlign: 'top',
-            title: <translate>JSON CLI Processor</translate>
+            title: <translate>JSON CLI Processor</translate>,
           },
           {
             content: (
@@ -133,7 +133,7 @@ class Index extends React.Component {
             ),
             image: `${baseUrl}img/js.svg`,
             imageAlign: 'top',
-            title: <translate>JS Syntax</translate>
+            title: <translate>JS Syntax</translate>,
           },
           {
             content: (
@@ -143,8 +143,8 @@ class Index extends React.Component {
             ),
             image: `${baseUrl}img/shell.svg`,
             imageAlign: 'top',
-            title: <translate>STDIN and STDOUT</translate>
-          }
+            title: <translate>STDIN and STDOUT</translate>,
+          },
         ]}
       </Block>
     )
