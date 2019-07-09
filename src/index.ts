@@ -3,6 +3,16 @@ import * as safeEval from 'safe-eval'
 import chalk from 'chalk'
 const ERROR = chalk.red('[error]')
 
+const methodList = [
+  'map',
+  'reduce',
+  'filter',
+  'reduceRight',
+  'some',
+  'every',
+  'find',
+]
+
 export default (
   inputs: string,
   functionString: string,
@@ -42,10 +52,13 @@ export default (
     try {
       // @ts-ignore
       const func: Function = safeEval(`${functionString}`)
-      if (method && jsons.length === 1) {
+      if (method && methodList.includes(method) && jsons.length === 1) {
         // apply preprocessors if specified
         result = jsons[0][method](func, parsedSecondArg)
       } else {
+        if (method && !methodList.includes(method)) {
+          throw new Error('Invalid subcommand detected.')
+        }
         result = func(...jsons)
       }
     } catch (e) {

@@ -21,10 +21,11 @@ program.on('--help', () => {
   process.stdout.write(
     `
       Examples:
-        $ jqf        'obj => obj.value'
-        $ jqf map    'arr => arr.id'
-        $ jqf find   'arr => arr.id === 1'
-        $ jqf reduce '(prev, item) => /* reduce */' '"value"'
+        $ jqf             'obj => obj.value'
+        $ jqf map         'arr => arr.id'
+        $ jqf find        'arr => arr.id === 1'
+        $ jqf reduce      '(prev, item) => /* reduce */' '"value"'
+        $ jqf reduceRight '(prev, item) => /* reduce */' '"value"'
   `[outdent as string],
   )
 })

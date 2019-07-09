@@ -64,3 +64,5 @@ typings/
 
 # distribution
 dist/
+
+.DS_Store
