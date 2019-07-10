@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import test, { ExecutionContext } from 'ava'
 import { promisify } from 'util'
 import * as child_process from 'child_process'

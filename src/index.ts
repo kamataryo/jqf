@@ -1,6 +1,12 @@
-import { JqfOptions } from '../'
 import * as safeEval from 'safe-eval'
 import chalk from 'chalk'
+
+declare interface JqfOptions {
+  rawStringOutput?: boolean
+  minify?: boolean
+  method?: string
+}
+
 const ERROR = chalk.red('[error]')
 
 const methodList = [
