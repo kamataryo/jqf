@@ -45,3 +45,17 @@ if (!Object.entries) {
     return resArray
   }
 }
+
+if (!Object.fromEntries) {
+  Object.fromEntries = (entries: [string, any][]) => {
+    const o = {}
+
+    Object.keys(entries).forEach(key => {
+      const [k, v] = entries[key]
+
+      o[k] = v
+    })
+
+    return o
+  }
+}
