@@ -20,10 +20,20 @@ Options:
   -h, --help               output usage information
 
 Examples:
-  $ jqf        'obj => obj.value'
-  $ jqf map    'arr => arr.id'
-  $ jqf find   'arr => arr.id === 1'
-  $ jqf reduce '(prev, item) => /* reduce */' '"value"'
+  $ jqf             'obj => obj.value'
+  $ jqf map         'arr => arr.id'
+  $ jqf find        'arr => arr.id === 1'
+  $ jqf filter      'arr => !arr'
+  $ jqf some        'arr => arr % 2 === 0'
+  $ jqf every        'arr => arr % 2 === 0'
+  $ jqf reduce      '(prev, item) => /* reduce */' '"value"'
+  $ jqf reduceRight '(prev, item) => /* reduce */' '"value"'
+  $ jqf flatMap     'arr => arr'
+  $ jqf keys
+  $ jqf values
+  $ jqf entries
+  $ jqf fromEntries
+  $ jqf flat
 ```
 
 ## 基本的な使い方
@@ -123,6 +133,15 @@ false
 ```shell
 # 全ての要素を3乗した値を計算する
 $ echo '[1,2,3]' | jqf map --minify 'n => Math.pow(n, 3)'
+[1,8,27]
+```
+
+##### `Array.prototype.flatMap`
+
+```shell
+# 全ての要素をフラットにして3乗した値を計算する
+$ echo '[[1],2,3]' | jqf flatMap --minify 'n => Math.pow(n, 3)'
+[1,8,27]
 ```
 
 ##### `Array.prototype.filter`
@@ -156,6 +175,44 @@ $ echo '["a", "b", "c"]' | jqf reduce '(prev, str) => prev + str' '"word: "'
 # 文字列を逆方向に結合する
 $ echo '["a", "b", "c"]' | jqf reduceRight '(prev, str) => prev + str' '"word: "'
 "word: cba"
+```
+
+
+##### `Object.keys`
+
+```shell
+# オブジェクトのキーを配列で取得
+$ echo '{"a":1, "b":2, "c":3}' | jqf keys -m
+["a","b","c"]
+```
+
+##### `Object.values`
+
+```shell
+# オブジェクトの値を配列で取得
+$ echo '{"a":1, "b":2, "c":3}' | jqf values -m
+[1,2,3]
+```
+
+##### `Object.entries`
+
+```shell
+$ echo '{"a":1, "b":2, "c":3}' | jqf entries -m
+[["a",1],["b",2],["c",3]]
+```
+
+##### `Object.fromEntries`
+
+```shell
+$ echo '[["a",1],["b",2],["c",3]]' | jqf fromEntries -m
+{"a":1, "b":2, "c":3}
+```
+
+##### `Array.flat`
+
+```shell
+$ echo '[["a",1],["b",2],["c",3]]' | jqf flat -m
+["a",1,"b",2,"c",3]
 ```
 
 ## 応用例 (β 版の機能)

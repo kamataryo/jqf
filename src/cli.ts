@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as program from 'commander'
-import lib from './'
+import lib, { allowedMethods } from './'
 import * as fs from 'fs'
 import { isatty } from 'tty'
 import * as outdent from '@kamataryo/outdent'
@@ -24,21 +24,27 @@ program.on('--help', () => {
         $ jqf             'obj => obj.value'
         $ jqf map         'arr => arr.id'
         $ jqf find        'arr => arr.id === 1'
+        $ jqf filter      'arr => !arr'
+        $ jqf some        'arr => arr % 2 === 0'
+        $ jqf every        'arr => arr % 2 === 0'
         $ jqf reduce      '(prev, item) => /* reduce */' '"value"'
         $ jqf reduceRight '(prev, item) => /* reduce */' '"value"'
+        $ jqf flatMap     'arr => arr'
+        $ jqf keys
+        $ jqf values
+        $ jqf entries
+        $ jqf fromEntries
+        $ jqf flat
   `[outdent as string],
   )
 })
 
 program.parse(process.argv)
 
-// hight order method
-const method = program.args[1] && program.args[0]
-
-// arg
-const functionString = program.args[1] || program.args[0]
-const secondArg =
-  method === 'reduce' || method === 'reduceRight' ? program.args[2] : void 0
+const args = [...program.args]
+const method = allowedMethods.includes(program.args[0]) ? args.shift() : void 0
+const functionString = args.shift()
+const secondArg = args.shift()
 
 // options
 const { rawStringOutput, minify } = program

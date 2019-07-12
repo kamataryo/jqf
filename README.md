@@ -98,9 +98,19 @@ Options:
   -h, --help               output usage information
 
 Examples:
-  $ jqf      'obj => obj.value'
-  $ jqf map  'arr => arr.id'
-  $ jqf find 'arr => arr.id === 1'
+  $ jqf             'obj => obj.value'
+  $ jqf map         'arr => arr.id'
+  $ jqf find        'arr => arr.id === 1'
+  $ jqf filter      'arr => !arr'
+  $ jqf some        'arr => arr % 2 === 0'
+  $ jqf every        'arr => arr % 2 === 0'
+  $ jqf reduce      '(prev, item) => /* reduce */' '"value"'
+  $ jqf reduceRight '(prev, item) => /* reduce */' '"value"'
+  $ jqf flatMap     'arr => arr'
+  $ jqf keys
+  $ jqf values
+  $ jqf entries
+  $ jqf fromEntries
 ```
 
 ## development

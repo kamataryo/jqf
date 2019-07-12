@@ -20,10 +20,20 @@ Options:
   -h, --help               output usage information
 
 Examples:
-  $ jqf        'obj => obj.value'
-  $ jqf map    'arr => arr.id'
-  $ jqf find   'arr => arr.id === 1'
-  $ jqf reduce '(prev, item) => /* reduce */' '"value"'
+  $ jqf             'obj => obj.value'
+  $ jqf map         'arr => arr.id'
+  $ jqf find        'arr => arr.id === 1'
+  $ jqf filter      'arr => !arr'
+  $ jqf some        'arr => arr % 2 === 0'
+  $ jqf every       'arr => arr % 2 === 0'
+  $ jqf reduce      '(prev, item) => /* reduce */' '"value"'
+  $ jqf reduceRight '(prev, item) => /* reduce */' '"value"'
+  $ jqf flatMap     'arr => arr'
+  $ jqf keys
+  $ jqf values
+  $ jqf entries
+  $ jqf fromEntries
+  $ jqf flat
 ```
 
 ## basic Usage
@@ -123,6 +133,15 @@ false
 ```shell
 # calculate cubic values for all the elements
 $ echo '[1,2,3]' | jqf map --minify 'n => Math.pow(n, 3)'
+[1,8,27]
+```
+
+##### `Array.prototype.flatMap`
+
+```shell
+# flatten and calculate cubic values for all the elements
+$ echo '[[1],2,3]' | jqf flatMap --minify 'n => Math.pow(n, 3)'
+[1,8,27]
 ```
 
 ##### `Array.prototype.filter`
@@ -155,6 +174,43 @@ $ echo '["a", "b", "c"]' | jqf reduce '(prev, str) => prev + str' '"word: "'
 # concatenate strings in reverse
 $ echo '["a", "b", "c"]' | jqf reduceRight '(prev, str) => prev + str' '"word: "'
 "word: cba"
+```
+
+##### `Object.keys`
+
+```shell
+# get keys of given object
+$ echo '{"a":1, "b":2, "c":3}' | jqf keys -m
+["a","b","c"]
+```
+
+##### `Object.values`
+
+```shell
+# get values of given object
+$ echo '{"a":1, "b":2, "c":3}' | jqf values -m
+[1,2,3]
+```
+
+##### `Object.entries`
+
+```shell
+$ echo '{"a":1, "b":2, "c":3}' | jqf entries -m
+[["a",1],["b",2],["c",3]]
+```
+
+##### `Object.fromEntries`
+
+```shell
+$ echo '[["a",1],["b",2],["c",3]]' | jqf fromEntries -m
+{"a":1, "b":2, "c":3}
+```
+
+##### `Array.flat`
+
+```shell
+$ echo '[["a",1],["b",2],["c",3]]' | jqf flat -m
+["a",1,"b",2,"c",3]
 ```
 
 ## advanced Usage (β features)

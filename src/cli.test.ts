@@ -144,6 +144,66 @@ test('every subcommand', async (t: ExecutionContext) => {
   t.is(stdout, 'false')
 })
 
+test('flatMap subcommand', async (t: ExecutionContext) => {
+  const cmd = 'echo \'[["2"],"3","5"]\' | jqf flatMap -m \'x => x\''
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '["2","3","5"]')
+})
+
+test('keys subcommand without function', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf keys -m'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '["a","b"]')
+})
+
+test('keys subcommand', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf keys -m \'x => x.join(",")\''
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '"a,b"')
+})
+
+test('values subcommand without function', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf values -m'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '[1,2]')
+})
+
+test('values subcommand', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf values -m \'x => x.join(",")\''
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '"1,2"')
+})
+
+test('entries subcommand without function', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf entries -m'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '[["a",1],["b",2]]')
+})
+
+test('entries subcommand', async (t: ExecutionContext) => {
+  const cmd = 'echo \'{ "a": 1, "b": 2 }\' | jqf entries -m \'x => x\''
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '[["a",1],["b",2]]')
+})
+
+test('fromEntries subcommand without function', async (t: ExecutionContext) => {
+  const cmd = 'echo \'[["a",1],["b",2]]\' | jqf fromEntries -m'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '{"a":1,"b":2}')
+})
+
+test('fromEntries subcommand', async (t: ExecutionContext) => {
+  const cmd = 'echo \'[["a",1],["b",2]]\' | jqf fromEntries -m \'x => x\''
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '{"a":1,"b":2}')
+})
+
+test('flat subcommand without function', async (t: ExecutionContext) => {
+  const cmd = 'echo \'[["a",1],["b",2]]\' | jqf flat -m'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '["a",1,"b",2]')
+})
+
 test('reduce subcommand fails with invalid JSON', async (t: ExecutionContext) => {
   const cmd =
     'echo \'[{"val":1},{"val":2},{"val":3}]\' | jqf reduce \'(prev, {val}) => prev + val\' \'{\''
