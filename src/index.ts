@@ -81,7 +81,6 @@ export default (
       result = logics[method || 'default'](jsons, func, parsedSecondArg)
     }
   } catch (e) {
-    console.error(e)
     throw new Error(
       e.message
         .split('\n')
