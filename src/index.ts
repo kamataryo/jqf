@@ -1,5 +1,5 @@
 import * as safeEval from 'safe-eval'
-import chalk from 'chalk'
+import * as chalk from 'chalk'
 import './polyfills'
 
 declare interface JqfOptions {

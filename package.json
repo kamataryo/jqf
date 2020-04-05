@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "@kamataryo/outdent": "^1.0.4",
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0",
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
     "safe-eval": "^0.4.1"
   }
 }
