@@ -69,6 +69,15 @@ $ echo '{"hello":"world"}' | jqf 'obj => obj.hello'
 "world"
 ```
 
+##### most simple projection
+
+```
+$ echo '{"hello":"world"}' | jqf
+{
+  "hello": "world"
+}
+```
+
 ##### strip quotation from string result
 
 ```shell

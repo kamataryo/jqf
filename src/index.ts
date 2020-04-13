@@ -60,7 +60,7 @@ export default (
     return ''
   }, '')
 
-  const func: Function = safeEval(functionString)
+  const func: Function = safeEval(functionString || 'x => x')
 
   let parsedSecondArg = void 0
   if (secondArg) {

@@ -17,6 +17,12 @@ test('non json input', async (t: ExecutionContext) => {
   t.is(error.code, 1)
 })
 
+test('without argument', async t => {
+  const cmd = 'echo {} | jqf'
+  const { stdout } = await exec(cmd)
+  t.is(stdout, '{}')
+})
+
 test('invalid JavaScript function', async (t: ExecutionContext) => {
   const cmd = 'echo \'{}\' | jqf \'aaa\''
   const error = await t.throwsAsync<CustomError>(async () => await exec(cmd))
