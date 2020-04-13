@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>API References · jqf v1.6.0</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;general&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#general&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;general&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="API References · jqf v1.6.0"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jqf.kamataryo.com/index.html"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;general&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#general&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;general&lt;/h2&gt;
+"/><meta property="og:image" content="https://jqf.kamataryo.com/img/ogimage.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://jqf.kamataryo.com/img/ogimage.png"/><link rel="shortcut icon" href="/img/jqf.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://jqf.kamataryo.com/blog/atom.xml" title="jqf v1.6.0 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://jqf.kamataryo.com/blog/feed.xml" title="jqf v1.6.0 Blog RSS Feed"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/jqf-white.svg" alt="jqf v1.6.0"/><h2 class="headerTitleWithLogo">jqf v1.6.0</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/install" target="_self">Docs</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/ja/api">日本語</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Documentations</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Documentations</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/install">Install Guide</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/api">API References</a></li><li class="navListItem"><a class="navItem" href="/docs/en/practical-use">Practical Use</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">API References</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="general"></a><a href="#general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>general</h2>
+<p>You can see list of options and sub commands with <code>--help</code> option.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> jqf -h</span>
+Usage: jqf [method] [options] "&lt;JavaScript function&gt;"
+
+Process stdin JSON string with JavaScript function.
+
+Options:
+  -V, --version            output the version number
+  -r, --raw-string-output  no quotations with string output
+  -m, --minify             minify output JSON
+  -h, --help               output usage information
+
+Examples:
+<span class="hljs-meta">  $</span><span class="bash"> jqf             <span class="hljs-string">'obj =&gt; obj.value'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf map         <span class="hljs-string">'arr =&gt; arr.id'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf find        <span class="hljs-string">'arr =&gt; arr.id === 1'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf filter      <span class="hljs-string">'arr =&gt; !arr'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf some        <span class="hljs-string">'arr =&gt; arr % 2 === 0'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf every       <span class="hljs-string">'arr =&gt; arr % 2 === 0'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf reduce      <span class="hljs-string">'(prev, item) =&gt; /* reduce */'</span> <span class="hljs-string">'"value"'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf reduceRight <span class="hljs-string">'(prev, item) =&gt; /* reduce */'</span> <span class="hljs-string">'"value"'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf flatMap     <span class="hljs-string">'arr =&gt; arr'</span></span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf keys</span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf values</span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf entries</span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf fromEntries</span>
+<span class="hljs-meta">  $</span><span class="bash"> jqf flat</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="basic-usage"></a><a href="#basic-usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>basic Usage</h2>
+<h3><a class="anchor" aria-hidden="true" id="process-single-json-input"></a><a href="#process-single-json-input" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>process single JSON input</h3>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">command</span> | jqf [options] &lt;JavaScript <span class="hljs-keyword">function</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p><code>command</code> should be executable and its output should be valid JSON string</p></li>
+<li><p><code>&lt;JavaScript function&gt;</code> should be valid JavaScript function, which takes an object parsed from the given JSON string via stdin, processes and returns its result to stdout</p></li>
+<li><p>Result will be a stringified JSON described below</p>
+<ul>
+<li><code>{&quot;key&quot;: &quot;value&quot;}</code></li>
+<li><code>[1,2,3]</code></li>
+<li><code>true</code></li>
+<li><code>0</code></li>
+<li><code>&quot;string&quot;</code></li>
+<li>etc.</li>
+</ul></li>
+<li><p>You can pass some <code>[options]</code> described below</p>
+<table>
+<thead>
+<tr><th style="text-align:left">options</th><th style="text-align:left">abbr.</th><th style="text-align:left">descriptions</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">--raw-string-output</td><td style="text-align:left">-r</td><td style="text-align:left">strip quotation <code>&quot;&quot;</code> from string result</td></tr>
+<tr><td style="text-align:left">--minify</td><td style="text-align:left">-m</td><td style="text-align:left">minify output JSON string</td></tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>examples</h4>
+<h5><a class="anchor" aria-hidden="true" id="process-object"></a><a href="#process-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>process object</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'{"hello":"world"}'</span> | jqf <span class="hljs-string">'obj =&gt; obj.hello'</span></span>
+"world"
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="most-simple-projection"></a><a href="#most-simple-projection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>most simple projection</h5>
+<pre><code class="hljs">$ echo '{<span class="hljs-string">"hello"</span>:<span class="hljs-string">"world"</span>}' | <span class="hljs-type">jqf</span>
+{
+  <span class="hljs-string">"hello"</span>: <span class="hljs-string">"world"</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="strip-quotation-from-string-result"></a><a href="#strip-quotation-from-string-result" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>strip quotation from string result</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'{"hello":"world"}'</span> | jqf --raw-string-output <span class="hljs-string">'obj =&gt; obj.hello'</span></span>
+world
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="array-map"></a><a href="#array-map" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>array map</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3]'</span> | jqf <span class="hljs-string">'nums =&gt; nums.map(n =&gt; n * 2)'</span></span>
+[
+  2,
+  4,
+  6
+]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="minify-option"></a><a href="#minify-option" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>minify option</h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3]'</span> | jqf --minify <span class="hljs-string">'nums =&gt; nums.map(n =&gt; n * 2)'</span></span>
+[2,4,6]
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="array-shorthands"></a><a href="#array-shorthands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Array shorthands</h3>
+<p>We provide shorthand notations for some of <code>Array.prototype</code> methods with subcommand.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">command</span> | jqf [method] [options] &lt;JavaScript <span class="hljs-keyword">function</span>&gt;</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="methods-with-examples"></a><a href="#methods-with-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>methods with examples</h4>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypefind"></a><a href="#arrayprototypefind" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.find</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> find the first even number.</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3]'</span> | jqf find <span class="hljs-string">'n =&gt; n % 2 === 0'</span></span>
+2
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypeevery"></a><a href="#arrayprototypeevery" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.every</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> check <span class="hljs-keyword">if</span> all the number is under 10.</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,5,7,9]'</span> | jqf every <span class="hljs-string">'n =&gt; n &lt; 10'</span></span>
+true
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypesome"></a><a href="#arrayprototypesome" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.some</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> check <span class="hljs-keyword">if</span> some even numbers are included.</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,3,5,7,9]'</span> | jqf some <span class="hljs-string">'n =&gt; n % 2 === 0'</span></span>
+false
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypemap"></a><a href="#arrayprototypemap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.map</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> calculate cubic values <span class="hljs-keyword">for</span> all the elements</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3]'</span> | jqf map --minify <span class="hljs-string">'n =&gt; Math.pow(n, 3)'</span></span>
+[1,8,27]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypeflatmap"></a><a href="#arrayprototypeflatmap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.flatMap</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> flatten and calculate cubic values <span class="hljs-keyword">for</span> all the elements</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[[1],2,3]'</span> | jqf flatMap --minify <span class="hljs-string">'n =&gt; Math.pow(n, 3)'</span></span>
+[1,8,27]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypefilter"></a><a href="#arrayprototypefilter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.filter</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> pick even numbers</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3,5,7,8,10]'</span> | jqf filter --minify <span class="hljs-string">'n =&gt; n % 2 === 0'</span></span>
+[2,8,10]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypereduce"></a><a href="#arrayprototypereduce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.reduce</code></h5>
+<p>You can provide <code>reduce</code> initial value as 2nd argument, which should be valid JSON string.
+Be careful that string values require quotations <code>&quot;&quot;</code>, i.e. <code>'&quot;string value&quot;'</code>.</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> calculate sum</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[1,2,3,4,5,6,7,8,9,10]'</span> | jqf reduce <span class="hljs-string">'(prev, n) =&gt; prev + n'</span> <span class="hljs-string">'0'</span></span>
+</code></pre>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> concatenate strings</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'["a", "b", "c"]'</span> | jqf reduce <span class="hljs-string">'(prev, str) =&gt; prev + str'</span> <span class="hljs-string">'"word: "'</span></span>
+"word: abc"
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayprototypereduceright"></a><a href="#arrayprototypereduceright" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.prototype.reduceRight</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> concatenate strings <span class="hljs-keyword">in</span> reverse</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'["a", "b", "c"]'</span> | jqf reduceRight <span class="hljs-string">'(prev, str) =&gt; prev + str'</span> <span class="hljs-string">'"word: "'</span></span>
+"word: cba"
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="objectkeys"></a><a href="#objectkeys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Object.keys</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> get keys of given object</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'{"a":1, "b":2, "c":3}'</span> | jqf keys -m</span>
+["a","b","c"]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="objectvalues"></a><a href="#objectvalues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Object.values</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">#</span><span class="bash"> get values of given object</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'{"a":1, "b":2, "c":3}'</span> | jqf values -m</span>
+[1,2,3]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="objectentries"></a><a href="#objectentries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Object.entries</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'{"a":1, "b":2, "c":3}'</span> | jqf entries -m</span>
+[["a",1],["b",2],["c",3]]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="objectfromentries"></a><a href="#objectfromentries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Object.fromEntries</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[["a",1],["b",2],["c",3]]'</span> | jqf fromEntries -m</span>
+{"a":1, "b":2, "c":3}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="arrayflat"></a><a href="#arrayflat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Array.flat</code></h5>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">'[["a",1],["b",2],["c",3]]'</span> | jqf flat -m</span>
+["a",1,"b",2,"c",3]
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="advanced-usage-β-features"></a><a href="#advanced-usage-β-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>advanced Usage (β features)</h2>
+<h3><a class="anchor" aria-hidden="true" id="multiple-stream-inputs"></a><a href="#multiple-stream-inputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>multiple stream inputs</h3>
+<p>You can pass multiple stream inputs via stdin:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> cat &lt;(<span class="hljs-built_in">echo</span> <span class="hljs-string">'{"val": 1}'</span>) &lt;(<span class="hljs-built_in">echo</span> <span class="hljs-string">'{"val": 2}'</span>) | jqf <span class="hljs-string">'(x, y) =&gt; x.val + y.val'</span></span>
+3
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/install"><span class="arrow-prev">← </span><span>Install Guide</span></a><a class="docs-next button" href="/docs/en/practical-use"><span>Practical Use</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general">general</a></li><li><a href="#basic-usage">basic Usage</a><ul class="toc-headings"><li><a href="#process-single-json-input">process single JSON input</a></li><li><a href="#array-shorthands">Array shorthands</a></li></ul></li><li><a href="#advanced-usage-β-features">advanced Usage (β features)</a><ul class="toc-headings"><li><a href="#multiple-stream-inputs">multiple stream inputs</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jqf-white.svg" alt="jqf v1.6.0" width="66" height="58"/></a><div><h5>Documentations</h5><a href="/docs/en/install.html">Install Guide</a><a href="/docs/en/api.html">API reference</a><a href="/docs/en/practical-use.html">Practical Use</a></div><div><h5>More</h5><a href="https://github.com/kamataryo/jqf" target="_blank">GitHub</a><a href="https://github.com/kamataryo/jqf/blob/master/LICENSE">Jqf is Licensed under the MIT License.</a></div></section><section class="copyright">Copyright © 2020 kamataryo</section></footer></div><script>window.fbAsyncInit = function() {FB.init({appId:'343450729823411',xfbml:true,version:'v2.7'});};(function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) {return;}js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/en_US/sdk.js';fjs.parentNode.insertBefore(js, fjs);}(document, 'script','facebook-jssdk'));
+                </script></body></html>
