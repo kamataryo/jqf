@@ -126,6 +126,7 @@ $ npm test
 
 ```shell
 $ cd website
+$ yarn
 $ npm start
 ```
 
