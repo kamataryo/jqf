@@ -1,6 +1,6 @@
 # jqf
 
-[![Build Status](https://travis-ci.org/kamataryo/jqf.svg?branch=master)](https://travis-ci.org/kamataryo/jqf)
+![build](https://github.com/kamataryo/jqf/workflows/build/badge.svg)
 [![npm version](https://badge.fury.io/js/jqf.svg)](https://badge.fury.io/js/jqf)
 
 Jqf is a CLI JSON processor with JavaScript function syntax.
