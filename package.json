@@ -1,6 +1,6 @@
 {
   "name": "jqf",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Jqf is a CLI JSON processor with JavaScript function syntax",
   "keywords": [
     "json",
