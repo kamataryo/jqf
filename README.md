@@ -7,7 +7,7 @@ Jqf is a CLI JSON processor with JavaScript function syntax.
 
 Show documentation: [https://jqf.kamataryo.com](https://jqf.kamataryo.com)
 
-## Prerequisites
+## Prerequisites for usage
 
 Node.js > 16
 
