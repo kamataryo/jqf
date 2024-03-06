@@ -8,7 +8,7 @@ on:
     branches: ['*']
     tags: ['*']
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
           path: |
             dist/
             docs/
-  
+
   publish:
     name: 'Publish npm package'
     runs-on: ubuntu-latest
@@ -64,4 +64,4 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=${API_TOKEN}" > $HOME/.npmrc && npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.API_TOKEN }}
- 
+

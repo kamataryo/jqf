@@ -10,7 +10,7 @@ You can process JSON value obtained from JSON API with jqf.
 First, let's check the example.
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json'
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json'
 [
   { "id": 1, "name": "Adams", "score": 70 },
   { "id": 2, "name": "Baker", "score": 58 },
@@ -23,7 +23,7 @@ $ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students
 Then let's pick the scores of them.
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json' | \
   jqf 'students => students.map(student => student.score)'
 [
   70,
@@ -37,7 +37,7 @@ $ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students
 Or you can use shorthand.
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json' | \
   jqf map 'student => student.score'
 [
   70,

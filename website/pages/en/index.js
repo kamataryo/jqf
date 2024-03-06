@@ -20,7 +20,7 @@ const Badges = () => (
   <div className={'section badges badge-section'}>
     <a href="https://travis-ci.org/kamataryo/jqf">
       <img
-        src="https://travis-ci.org/kamataryo/jqf.svg?branch=master"
+        src="https://travis-ci.org/kamataryo/jqf.svg?branch=main"
         alt="build status"
       />
     </a>

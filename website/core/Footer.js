@@ -52,7 +52,7 @@ class Footer extends React.Component {
             <a href="https://github.com/kamataryo/jqf" target="_blank">
               GitHub
             </a>
-            <a href="https://github.com/kamataryo/jqf/blob/master/LICENSE">
+            <a href="https://github.com/kamataryo/jqf/blob/main/LICENSE">
               Jqf is Licensed under the MIT License.
             </a>
           </div>

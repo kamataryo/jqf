@@ -10,7 +10,7 @@ Jqf を使って、 JSON API から得られた JSON を処理することがで
 最初に JSON API の例を確認してみます。
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json'
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json'
 [
   { "id": 1, "name": "Adams", "score": 70 },
   { "id": 2, "name": "Baker", "score": 58 },
@@ -23,7 +23,7 @@ $ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students
 それでは、学生のスコアをリストとしてピックアップしてみます。
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json' | \
   jqf 'students => students.map(student => student.score)'
 [
   70,
@@ -37,7 +37,7 @@ $ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students
 ショートハンド記法を使うこともできます。
 
 ```shell
-$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/master/examples/students.json' | \
+$ curl 'https://raw.githubusercontent.com/kamataryo/jqf/main/examples/students.json' | \
   jqf map 'student => student.score'
 [
   70,
