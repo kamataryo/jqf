@@ -23,7 +23,6 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun test
       - run: bun run build
-      - run: pushd website && bun install && bun run build && popd
 
       - name: save the built
         uses: actions/upload-artifact@v4
@@ -31,7 +30,6 @@ jobs:
           name: the-built
           path: |
             dist/
-            docs/
 
   publish:
     name: 'Publish npm package'
