@@ -120,6 +120,7 @@ $ git clone git@github.com:kamataryo/jqf.git
 $ cd jqf
 $ bun install
 $ bun test
+$ bun run build
 ```
 
 ## docs development
@@ -128,6 +129,7 @@ $ bun test
 $ cd website
 $ bun install
 $ bun start
+$ bun run build
 ```
 
 ## contributions
