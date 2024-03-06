@@ -1,15 +1,15 @@
 # jqf
 
-![build](https://github.com/kamataryo/jqf/workflows/build/badge.svg)
+[![build](https://github.com/kamataryo/jqf/workflows/build/badge.svg)](https://github.com/kamataryo/jqf/actions/workflows/build.yml)
 [![npm version](https://badge.fury.io/js/jqf.svg)](https://badge.fury.io/js/jqf)
 
 Jqf is a CLI JSON processor with JavaScript function syntax.
 
 Show documentation: [https://jqf.kamataryo.com](https://jqf.kamataryo.com)
 
-## Prerequisites
+## Prerequisites for usage
 
-Node.js > 8
+Node.js > 16
 
 ## install
 
@@ -118,22 +118,24 @@ Examples:
 ```shell
 $ git clone git@github.com:kamataryo/jqf.git
 $ cd jqf
-$ yarn
-$ npm test
+$ bun install
+$ bun test
+$ bun run build
 ```
 
 ## docs development
 
 ```shell
 $ cd website
-$ yarn
-$ npm start
+$ bun install
+$ bun start
+$ bun run build
 ```
 
 ## contributions
 
-Issues and pull requests are welcome.
+[Issues](https://github.com/kamataryo/jqf/issues) and [pull requests](https://github.com/kamataryo/jqf/pulls) are welcome.
 
 ## Acknowledgements
 
-- Inspired great CLI JSON processing tool, [jq](https://stedolan.github.io/jq/)
+This project is inspired by great CLI JSON processing tool, [jq](https://stedolan.github.io/jq/).

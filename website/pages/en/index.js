@@ -18,9 +18,9 @@ const GridBlock = CompLibrary.GridBlock
 
 const Badges = () => (
   <div className={'section badges badge-section'}>
-    <a href="https://travis-ci.org/kamataryo/jqf">
+    <a href="https://github.com/kamataryo/jqf/actions/workflows/build.yml">
       <img
-        src="https://travis-ci.org/kamataryo/jqf.svg?branch=main"
+        src="https://github.com/kamataryo/jqf/workflows/build/badge.svg"
         alt="build status"
       />
     </a>

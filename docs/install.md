@@ -5,11 +5,17 @@ title: Install Guide
 
 ## Prerequisites
 
-Node.js > 8 required.
+Node.js > 16 required.
 
 ## Install to global
 
-You can install `jqf` command with npm or yarn.
+You can install `jqf` command with bun, npm or yarn.
+
+### with bun
+
+```shell
+$ bun install jqf --global
+```
 
 ### with npm
 

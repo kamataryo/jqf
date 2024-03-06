@@ -8,6 +8,7 @@
     "javascript",
     "CLI"
   ],
+  "type": "module",
   "main": "dist/index.js",
   "bin": "dist/cli.js",
   "license": "MIT",
@@ -15,8 +16,7 @@
   "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "private": false,
   "scripts": {
-    "build": "rimraf ./dist && tsc && chmod +x ./dist/cli.js",
-    "lint": "eslint --cache --ext=ts ./src",
+    "build": "bun build ./src/index.ts ./src/cli.ts --outdir ./dist --target node",
     "test": "npm run build && ava"
   },
   "ava": {
@@ -28,20 +28,13 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^12.6.1",
-    "@typescript-eslint/parser": "^1.11.0",
-    "ava": "^3.14.0",
-    "eslint": "^7.5.0",
-    "rimraf": "^2.6.3",
-    "ts-node": "^8.3.0",
-    "typescript": "3.5.3"
+    "@types/bun": "^1.0.8",
+    "@types/node": "16"
   },
   "dependencies": {
     "@kamataryo/outdent": "^1.0.4",
-    "chalk": "^4.0.0",
-    "commander": "^5.0.0",
-    "global": "^4.4.0",
-    "jqf": "^1.6.0",
+    "commander": "^12.0.0",
+    "picocolors": "^1.0.0",
     "safe-eval": "^0.4.1"
   }
 }

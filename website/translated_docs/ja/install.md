@@ -5,11 +5,17 @@ title: インストールガイド
 
 ## 必要条件
 
-Node.js > 8 が必要です。
+Node.js > 16 が必要です。
 
 ## グローバルインストール
 
 npm または Yarn を使って `jqf` コマンドをインストールできます。
+
+### bun でインストールする
+
+```shell
+$ bun install jqf --global
+```
 
 ### npm でインストールする
 
