@@ -5,7 +5,7 @@ title: Install Guide
 
 ## Prerequisites
 
-Node.js > 8 required.
+Node.js > 16 required.
 
 ## Install to global
 

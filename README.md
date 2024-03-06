@@ -9,7 +9,7 @@ Show documentation: [https://jqf.kamataryo.com](https://jqf.kamataryo.com)
 
 ## Prerequisites
 
-Node.js > 8
+Node.js > 16
 
 ## install
 
@@ -118,8 +118,8 @@ Examples:
 ```shell
 $ git clone git@github.com:kamataryo/jqf.git
 $ cd jqf
-$ yarn
-$ npm test
+$ bun install
+$ bun test
 ```
 
 ## docs development

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as program from 'commander'
+import { program } from 'commander'
 import lib, { allowedMethods } from './'
 import * as fs from 'fs'
 import { isatty } from 'tty'
@@ -35,7 +35,7 @@ program.on('--help', () => {
         $ jqf entries
         $ jqf fromEntries
         $ jqf flat
-  `[outdent as string],
+  `[outdent as any],
   )
 })
 
@@ -43,11 +43,11 @@ program.parse(process.argv)
 
 const args = [...program.args]
 const method = allowedMethods.includes(program.args[0]) ? args.shift() : void 0
-const functionString = args.shift()
-const secondArg = args.shift()
+const functionString = args.shift() as string
+const secondArg = args.shift() as string
 
 // options
-const { rawStringOutput, minify } = program
+const { rawStringOutput, minify } = program.opts()
 
 // stdin
 process.stdin.resume()
@@ -61,8 +61,9 @@ const onEnd = () => {
       minify,
       method,
     })
-  } catch (e) {
-    process.stdout.write(e.message)
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : String(e)
+    process.stdout.write(message)
     process.exit(1)
   }
 

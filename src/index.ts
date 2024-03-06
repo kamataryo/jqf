@@ -1,6 +1,6 @@
-import * as safeEval from 'safe-eval'
-import * as chalk from 'chalk'
-import './polyfills'
+// @ts-ignore
+import safeEval from 'safe-eval'
+import pico from 'picocolors'
 
 declare interface JqfOptions {
   rawStringOutput?: boolean
@@ -8,7 +8,7 @@ declare interface JqfOptions {
   method?: string
 }
 
-const ERROR = chalk.red('[error]')
+const ERROR = pico.red('[error]')
 
 const logics = {
   default: (jsons: any[], func: Function) => func(...jsons),
@@ -47,7 +47,7 @@ export default (
 ): string => {
   const { rawStringOutput = false, minify = false, method } = options
 
-  const jsons = []
+  const jsons: any[] = []
   inputs.split('\n').reduce((prev, line) => {
     const target = prev + line
     let json: object
@@ -78,11 +78,12 @@ export default (
     if (jsons.length === 0) {
       throw new Error(`${ERROR} The Given string is not parsable as JSON.`)
     } else {
-      result = logics[method || 'default'](jsons, func, parsedSecondArg)
+      result = logics[(method || 'default') as keyof typeof logics](jsons, func, parsedSecondArg)
     }
-  } catch (e) {
+  } catch (e: unknown) {
+    const message = (e as Error).message
     throw new Error(
-      e.message
+      message
         .split('\n')
         .map((line: string) => `${ERROR} ${line}`)
         .join('\n') +
