@@ -2,13 +2,11 @@
 
 import { program } from 'commander'
 import lib, { allowedMethods } from './'
-import * as fs from 'fs'
 import { isatty } from 'tty'
 import * as outdent from '@kamataryo/outdent'
+import meta from '../package.json'
 
-const { version, description } = JSON.parse(
-  fs.readFileSync(__dirname + '/../package.json').toString('utf-8'),
-)
+const { version, description } = meta
 
 program
   .version(version)
