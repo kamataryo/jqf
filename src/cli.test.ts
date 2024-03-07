@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test";
 import { promisify } from 'node:util'
 import * as child_process from 'node:child_process'
-import * as outdent from '@kamataryo/outdent'
+import { outdent } from '@kamataryo/outdent'
 
 interface CustomError extends Error {
   code: number
@@ -65,13 +65,13 @@ test('raw string output option 2', async () => {
 test('json output', async () => {
   const cmd = 'echo \'[1,2,3]\' | jqf \'x => x.map(y => y + 1)\''
   const { stdout } = await exec(cmd)
-  expect(stdout).toBe(`
+  expect(stdout).toBe(outdent`
   [
     2,
     3,
     4
   ]
-`[outdent as any])
+`)
 })
 
 test('minified json output 1', async () => {

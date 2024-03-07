@@ -3,7 +3,7 @@
 import { program } from 'commander'
 import lib, { allowedMethods } from './'
 import { isatty } from 'tty'
-import * as outdent from '@kamataryo/outdent'
+import { outdent } from '@kamataryo/outdent'
 import meta from '../package.json'
 
 const { version, description } = meta
@@ -16,8 +16,7 @@ program
   .option('-m, --minify', 'minify output JSON')
 
 program.on('--help', () => {
-  process.stdout.write(
-    `
+  process.stdout.write(outdent`
       Examples:
         $ jqf             'obj => obj.value'
         $ jqf map         'arr => arr.id'
@@ -33,7 +32,7 @@ program.on('--help', () => {
         $ jqf entries
         $ jqf fromEntries
         $ jqf flat
-  `[outdent as any],
+  `,
   )
 })
 
