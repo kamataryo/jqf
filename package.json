@@ -11,12 +11,13 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": "dist/cli.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "repository": "git@github.com:kamataryo/jqf.git",
   "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "private": false,
   "scripts": {
-    "build": "bun build ./src/index.ts ./src/cli.ts --outdir ./dist --target node",
+    "build": "rm -rf dist && bun build ./src/index.ts ./src/cli.ts --outdir ./dist --target node && tsc --emitDeclarationOnly --project tsconfig.type-declaration.json",
     "test": "bun test src/*.test.ts"
   },
   "ava": {

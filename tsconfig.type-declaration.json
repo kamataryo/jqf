@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+  },
+  "include": ["./src/index.ts"],
+  "exclude": ["node_modules", "./src/**/*.test.ts"]
+}

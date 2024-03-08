@@ -1,6 +1,6 @@
 // @ts-ignore
 import safeEval from 'safe-eval'
-import pico from 'picocolors'
+import * as pico from 'picocolors'
 
 declare interface JqfOptions {
   rawStringOutput?: boolean

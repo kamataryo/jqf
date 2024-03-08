@@ -4,7 +4,7 @@ import { program } from 'commander'
 import lib, { allowedMethods } from './'
 import { isatty } from 'tty'
 import { outdent } from '@kamataryo/outdent'
-import meta from '../package.json'
+import * as meta from '../package.json'
 
 const { version, description } = meta
 
